@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import HeaderImage from '../static/header@3072.png';
 import './main.css';
 
 const Colors = {
@@ -14,25 +15,41 @@ const Colors = {
   light: '#F2EFEC',
 }
 
-const TextHeadline = (props) => { return ( <TextHeadlineContainer>{props.children}</TextHeadlineContainer> ) }
+const Breakpoints = {
+  desktop: '1280px',
+  tablet: '800px',
+  mobile: '640px',
+  tiny: '480px',
+}
+
+const TextHeadline = (props) => { return ( <TextHeadlineContainer {...props}>{props.children}</TextHeadlineContainer> ) }
 const TextHeadlineContainer = styled.span`
   font-family: 'CriteriaCF', Impact, Haettenschweiler, ‘Franklin Gothic Bold’, Charcoal, ‘Helvetica Inserat’, ‘Bitstream Vera Sans Bold’, ‘Arial Black’, sans-serif;
   font-weight: bold;
   font-size: 64px;
   font-display: swap;
+  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 52px; }
+  @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 48px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 40px; }
 `
 
-const TextSubtitle = (props) => { return ( <TextSubtitleContainer>{props.children}</TextSubtitleContainer> ) }
+const TextSubtitle = (props) => { return ( <TextSubtitleContainer {...props}>{props.children}</TextSubtitleContainer> ) }
 const TextSubtitleContainer = styled.span`
   font-family: 'CriteriaCF';
   font-weight: bold;
   font-size: 32px;
   font-display: swap;
+  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 28px; }
+  @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 24px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 20px; }
 `
 
-const TextPrimaryParagraph = (props) => { return ( <TextPrimaryParagraphContainer>{props.children}</TextPrimaryParagraphContainer> ) }
+const TextPrimaryParagraph = (props) => { return ( <TextPrimaryParagraphContainer {...props}>{props.children}</TextPrimaryParagraphContainer> ) }
 const TextPrimaryParagraphContainer = styled.span`
   font-size: 48px;
+  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 32px; }
+  @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 28px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 24px; }
 `
 
 export default () => (
@@ -80,11 +97,10 @@ const Header = () => {
     <HeaderContainer>
       <HeaderTitleContainer>
         <h1><TextHeadline>Michael Wang* wants to design with you.</TextHeadline></h1>
-        <p>*he is a digital product designer</p>
-        <div>王理棟</div>
+        <p style={{fontSize: '24px', marginTop: "16px", color: Colors.beige}}>*a digital product designer</p>
+        <ChineseName>王理棟</ChineseName>
       </HeaderTitleContainer>
-      <HeaderIllustrationContainer style={{ background: Colors.beige, position: 'relative'}} >
-        Picture
+      <HeaderIllustrationContainer>
         <LastUpdated>Last updated Feb 2020</LastUpdated>
       </HeaderIllustrationContainer>
     </HeaderContainer>
@@ -95,22 +111,65 @@ const HeaderContainer = styled.div`
   flex-direction: row-reverse;
   width: 100%;
   border-bottom: 8px solid ${Colors.dark};
-  min-height: 50vw;
+  height: 50vw;
+  max-height: 90vh;
+  min-height: 66vh;
   align-items: center;
   div {
     flex-grow: 1;
+  }
+  @media only screen and (max-width: ${Breakpoints.mobile}) { 
+    flex-direction: column; 
+    height: auto;
+    max-height: none;
+    min-height: none;
   }
 `
 const HeaderIllustrationContainer = styled.div`
   width: 50%;
   align-self: stretch;
+  /* background: ${Colors.beige};  */
+  position: relative;
+  background: ${Colors.beige} url('${HeaderImage}') no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  
+  @media only screen and (max-width: ${Breakpoints.mobile}) { 
+    width: 100%; 
+    height: 100vw;
+  }
 `
 const HeaderTitleContainer = styled.div`
+  position: relative;
   width: 50%;
-  padding: 128px;
+  height: 100%;
+  padding: 0 128px;
   text-align: center;
   background: ${Colors.dark}; 
   color: ${Colors.light};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media only screen and (max-width: ${Breakpoints.desktop}) { padding: 0 64px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { padding: 0 32px; }
+
+  @media only screen and (max-width: ${Breakpoints.mobile}) { 
+    width: 100%; 
+    height: 100vw;
+  }
+`
+const ChineseName = styled.div`
+  position: absolute;
+  background: ${Colors.beige};
+  padding: 4px 8px;
+  border: 8px solid ${Colors.dark};
+  border-bottom: 0px;
+  left: 0;
+  bottom: 0;
+  color: ${Colors.dark};
+  font-weight: bold;
+  font-size: 32px;
+  @media only screen and (max-width: ${Breakpoints.mobile}) { border-bottom: 8px solid ${Colors.dark}; }
 `
 const LastUpdated = styled.div`
   background: ${Colors.pink};
@@ -160,6 +219,9 @@ const ContentBlockContainer = styled.div`
     padding: 32px;
     text-align: center;
   `}
+
+  @media only screen and (max-width: ${Breakpoints.desktop}) { padding: 64px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { padding: 64px 32px; }
 `
 
 
@@ -167,7 +229,7 @@ const CaseStudy = (props) => {
   return (
     <CaseStudyContainer {...props}>
       <div>{props.logo}</div>
-      <h2><TextHeadline>{props.title}</TextHeadline></h2>
+      <h2 style={{maxWidth: '62.5%'}}><TextHeadline>{props.title}</TextHeadline></h2>
       <div>{props.image}</div>
       <p><TextPrimaryParagraph>{props.description}</TextPrimaryParagraph></p>
     </CaseStudyContainer>
@@ -177,4 +239,7 @@ const CaseStudyContainer = styled.div`
   padding: 128px;
   border-bottom: 8px solid ${Colors.dark};
   background: ${Colors.light};
+
+  @media only screen and (max-width: ${Breakpoints.desktop}) { padding: 64px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { padding: 64px 32px; }
 `
