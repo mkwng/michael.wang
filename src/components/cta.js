@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
-import { Colors, TextSubtitle } from '../common.js'
+import { Colors, Breakpoints, TextSubtitle } from '../common.js'
 
 const Cta = () => {
   return (
@@ -28,22 +28,40 @@ const CtaContainer = styled.div`
   align-items: center;
   position: absolute;
   right: 64px;
-  width: 215px;
-  height: 215px;
+  width: 300px;
+  height: 300px;
   margin-top: -112px;
   transform: rotate(30deg);
+  @media only screen and (max-width: ${Breakpoints.desktop}) { 
+    width: 215px;
+    height: 215px;
+  }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { 
+    width: 160px;
+    height: 160px;
+  }
+
   svg {
     position: absolute;
     top:0;
     left:0;
+    width: 100%;
+    height:100%;
+    transition: transform 500ms;
   }
   a {
     text-decoration: none;
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 32px;
+    padding: 64px;
+    @media only screen and (max-width: ${Breakpoints.desktop}) { padding: 48px; }
   }
+
+  &:hover {
+    svg {transform:rotate(90deg);}
+  }
+  
 `
 
 export default Cta;

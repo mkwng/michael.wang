@@ -6,12 +6,6 @@ import { Colors, Breakpoints, TextHeadline } from '../common.js'
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterTitleContainer>
-        <h1><TextHeadline>Let's keep in touch</TextHeadline></h1>
-        <p style={{fontSize: '24px', marginTop: "16px", color: Colors.beige}}>
-          <a href="mailto:hi@michael.wang">Email</a> • <a href="https://twitter.com/mkwng" target='_blank'>Twitter</a> • <a href="https://linkedin.com/in/mkwng" target='_blank'>LinkedIn</a> • <a href="https://github.com/github" target='_blank'>Github</a>
-        </p>
-      </FooterTitleContainer>
       <FooterIllustrationContainer>
         <div style={{
           borderRadius: '9999px',
@@ -28,12 +22,17 @@ const Footer = () => {
         </div>
         <LastUpdated>Last updated Feb 2020</LastUpdated>
       </FooterIllustrationContainer>
+      <FooterTitleContainer>
+        <h1><TextHeadline>Let's keep in touch</TextHeadline></h1>
+        <p style={{fontSize: '24px', marginTop: "16px", color: Colors.beige}}>
+          <a href="mailto:hi@michael.wang">Email</a> • <a href="https://twitter.com/mkwng" target='_blank'>Twitter</a> • <a href="https://linkedin.com/in/mkwng" target='_blank'>LinkedIn</a> • <a href="https://github.com/github" target='_blank'>Github</a>
+        </p>
+      </FooterTitleContainer>
     </FooterContainer>
   )
 }
 const FooterContainer = styled.div`
   display: flex;
-  flex-direction: row-reverse;
   width: 100%;
   border-bottom: 8px solid ${Colors.dark};
   height: 45vw;

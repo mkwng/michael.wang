@@ -28,9 +28,9 @@ const TextHeadlineContainer = styled.span`
   font-size: 64px;
   text-transform: lowercase;
   font-display: swap;
-  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 52px; }
+  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 56px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 48px; }
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 40px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 32px; }
 `
 
 export const TextSubtitle = (props) => { return ( <TextSubtitleContainer {...props}>{props.children}</TextSubtitleContainer> ) }
@@ -42,7 +42,7 @@ const TextSubtitleContainer = styled.span`
   font-display: swap;
   @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 28px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 24px; }
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 20px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 16px; }
 `
 
 export const TextPrimaryParagraph = (props) => { return ( <TextPrimaryParagraphContainer {...props}>{props.children}</TextPrimaryParagraphContainer> ) }
@@ -50,7 +50,7 @@ const TextPrimaryParagraphContainer = styled.span`
   font-size: 48px;
   @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 32px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 28px; }
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 24px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 20px; }
 `
 
 export const TextSecondaryParagraph = (props) => { return ( <TextSecondaryParagraphContainer {...props}>{props.children}</TextSecondaryParagraphContainer> ) }
@@ -58,7 +58,7 @@ const TextSecondaryParagraphContainer = styled.span`
   font-size: 32px;
   @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 28px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 24px; }
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 20px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 16px; }
 `
 
 export const BigButton = (props) => {
@@ -76,4 +76,7 @@ const BigButtonContainer = styled.a`
   display: inline-block;
   margin: 0 auto;
   text-decoration: none;
+  @media only screen and (max-width: ${Breakpoints.desktop}) { padding: 28px 52px; }
+  @media only screen and (max-width: ${Breakpoints.tablet}) { padding: 22px 44px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { padding: 16px 32px; }
 `
