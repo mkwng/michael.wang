@@ -1,0 +1,27 @@
+/*
+Font: 		Criteria CF
+Style: 		Bold
+URL: 		https://www.youworkforthem.com/font/T9857/criteria-cf
+Foundry: 	Connary Fagen
+Foundry: 	https://www.youworkforthem.com/designer/479/connary-fagen
+Copyright:	Copyright © 2018 by Connary Fagen. All rights reserved.
+Version: 	17
+Created:	September 10, 2018
+License: 	https://www.youworkforthem.com/font-license 
+License: 	The WebFont(s) listed in this document must follow the YouWorkForThem
+			WebFont license rules. All other parties are strictly restricted 
+			from using the WebFonts(s) listed without a purchased license. 
+			All details above must always remain unaltered and visible in your CSS.
+*/
+
+@font-face {
+	font-family: 'CriteriaCF-Bold';
+	src: url('criteria-cf-bold.eot');
+	src: url('criteria-cf-bold.eot?#iefix') format('embedded-opentype'),
+             url('criteria-cf-bold.woff2') format('woff2'),
+	     url('criteria-cf-bold.woff') format('woff'),
+	     url('criteria-cf-bold.ttf') format('truetype'),
+	     url('criteria-cf-bold.svg#youworkforthem') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,39 @@
+@import-normalize "opinionated.css";
+
+@font-face {
+	font-family: 'CriteriaCF';
+	src: url('../static/criteria-cf-bold.eot');
+	src: url('../static/criteria-cf-bold.eot?#iefix') format('embedded-opentype'),
+       url('../static/criteria-cf-bold.woff2') format('woff2'),
+	     url('../static/criteria-cf-bold.woff') format('woff'),
+	     url('../static/criteria-cf-bold.ttf') format('truetype'),
+	     url('../static/criteria-cf-bold.svg#youworkforthem') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fakt';
+  src: url('../static/Fakt-Normal.woff2') format('woff2'),
+       url('../static/Fakt-Normal.woff') format('woff');
+       font-weight: normal;
+       font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #30333A;
+  background: #30333A;
+  font-family: 'Fakt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-display: swap;
+}
+
+a {
+  color: #30333A;
+  text-decoration-color: #F2EFEC;
+}
