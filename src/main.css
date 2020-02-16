@@ -37,3 +37,6 @@ a {
   color: #30333A;
   text-decoration-color: #F2EFEC;
 }
+a:hover {
+  text-decoration-color: #E4BA6E;
+}

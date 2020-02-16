@@ -43,6 +43,9 @@ const FooterContainer = styled.div`
   div {
     flex-grow: 1;
   }
+  a {
+    color: ${Colors.beige};
+  }
   @media only screen and (max-width: ${Breakpoints.mobile}) { 
     flex-direction: column; 
     height: auto;

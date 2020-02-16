@@ -69,7 +69,7 @@ export default () => (
       If you’re here, you’re trying to figure out what Michael’s deal 
       is. Let’s make it easy: • Designing and developing digital products 
       since 2009 • Based out of Oakland • Currently Head of Design 
-      at <a href="https://northstarmoney.com">Northstar</a>.
+      at <AltA href="https://northstarmoney.com">Northstar</AltA>.
     </TextPrimaryParagraph></ContentBlock>
     <ContentBlock isCompact={true} style={{background: Colors.orange}}>
       <TextSubtitle>Well, is his work any good?</TextSubtitle>
@@ -100,22 +100,35 @@ export default () => (
     <ContentBlock style={{background: Colors.blue, textAlign: 'center'}}>
       <h2 style={{marginBottom: '32px'}}><TextHeadline>Credits</TextHeadline></h2>
       <p><TextPrimaryParagraph>
-        headlines: <a href="#">criteria</a> by connary fagen <br />
-        body: <a href="#">fakt</a> by thomas thiemich <br />
-        hand-coded using <a href="#">react</a> <br />
-        hosted by <a href="#">netlify</a>
+        Headlines: <a href="https://connary.com/criteria.html">Criteria</a> by Connary Fagen <br />
+        Body: <a href="https://www.typeby.com/fonts/fakt">Fakt</a> by Thomas Thiemich <br />
+        Hosted by <a href="https://netlify.com">Netlify</a> <br />
+        Hand-coded in React and <a href="https://github.com/mkwng/michael.wang">open source</a>
       </TextPrimaryParagraph></p>
     </ContentBlock>
 
   </>
 );
 
+const AltA = styled.a`
+  &:hover {
+    text-decoration-color: ${Colors.blue};
+  }
+`
+
 const Article = (props) => {
   return (
     <a style={{display: 'block', textDecoration: 'none', marginBottom: '32px',}} href={props.link}>
       <h3><TextPrimaryParagraph>{props.title}</TextPrimaryParagraph></h3>
       <p><TextSecondaryParagraph>{props.description}</TextSecondaryParagraph></p>
-      <p><TextSecondaryParagraph>Read now →</TextSecondaryParagraph></p>
+      <FakeLink><TextSecondaryParagraph>Read now →</TextSecondaryParagraph></FakeLink>
     </a>
   )
 }
+const FakeLink = styled.p`
+  text-decoration: underline;
+  text-decoration-color: ${Colors.light};
+  &:hover {
+    text-decoration-color: ${Colors.yellow};
+  }
+`
