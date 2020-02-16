@@ -26,6 +26,7 @@ const TextHeadlineContainer = styled.span`
   font-family: 'CriteriaCF', Impact, Haettenschweiler, ‘Franklin Gothic Bold’, Charcoal, ‘Helvetica Inserat’, ‘Bitstream Vera Sans Bold’, ‘Arial Black’, sans-serif;
   font-weight: bold;
   font-size: 64px;
+  text-transform: lowercase;
   font-display: swap;
   @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 52px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 48px; }
@@ -37,6 +38,7 @@ const TextSubtitleContainer = styled.span`
   font-family: 'CriteriaCF';
   font-weight: bold;
   font-size: 32px;
+  text-transform: lowercase;
   font-display: swap;
   @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 28px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 24px; }
@@ -49,6 +51,14 @@ const TextPrimaryParagraphContainer = styled.span`
   @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 32px; }
   @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 28px; }
   @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 24px; }
+`
+
+export const TextSecondaryParagraph = (props) => { return ( <TextSecondaryParagraphContainer {...props}>{props.children}</TextSecondaryParagraphContainer> ) }
+const TextSecondaryParagraphContainer = styled.span`
+  font-size: 32px;
+  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 28px; }
+  @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 24px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 20px; }
 `
 
 export const BigButton = (props) => {

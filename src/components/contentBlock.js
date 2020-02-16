@@ -5,9 +5,7 @@ import { Colors, Breakpoints } from '../common.js'
 const ContentBlock = (props) => {
   return (
     <ContentBlockContainer {...props}>
-      <p>
-        {props.children}
-      </p>
+      {props.children}
     </ContentBlockContainer>
   )
 }

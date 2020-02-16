@@ -1,9 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
-import { Colors, Breakpoints, TextHeadline, TextPrimaryParagraph, TextSubtitle } from './common.js'
+import { Colors, Breakpoints, TextHeadline, TextPrimaryParagraph, TextSecondaryParagraph, TextSubtitle } from './common.js'
 import Header from './components/header';
+import Cta from './components/cta';
 import ContentBlock from './components/contentBlock';
 import CaseStudy from './components/caseStudy';
+import Footer from './components/footer';
 import './main.css';
 
 const caseStudies = [
@@ -35,6 +37,30 @@ const caseStudies = [
   },
 ]
 
+const Articles = [
+  {
+    title: 'S.F. knew it couldn‘t beat Lyft on bike issue',
+    description: '...so why did San Francisco attempt to renege on the 2015 exclusivity agreement anyway?',
+    link: 'read now',
+  },
+  {
+    title: 'Why are tech companies going public?',
+    description: 'What is the reason a company would want to IPO at all? ',
+    link: 'read now',
+  },
+  {
+    title: 'Why "founder-led" matters',
+    description: 'How much efficacy does a CEO actually hold on how the market might value their company?',
+    link: 'read now',
+  },
+  {
+    title: 'Whose problem is this?',
+    description: 'How to prioritize when your business relies heavily on APIs',
+    link: 'read now',
+  },
+]
+
+
 export default () => (
   <>
     <Header />
@@ -63,25 +89,33 @@ export default () => (
     <CaseStudy
       {...caseStudies[2]}
     />
+
+    <ContentBlock style={{background: Colors.green}}>
+      <h2 style={{marginBottom: '32px'}}><TextHeadline>Writing</TextHeadline></h2>
+      { Articles.map( (article, i) => (<Article key={i} {...article} />) ) }
+    </ContentBlock>
+
+    <Footer />
+
+    <ContentBlock style={{background: Colors.blue, textAlign: 'center'}}>
+      <h2 style={{marginBottom: '32px'}}><TextHeadline>Credits</TextHeadline></h2>
+      <p><TextPrimaryParagraph>
+        headlines: <a href="#">criteria</a> by connary fagen <br />
+        body: <a href="#">fakt</a> by thomas thiemich <br />
+        hand-coded using <a href="#">react</a> <br />
+        hosted by <a href="#">netlify</a>
+      </TextPrimaryParagraph></p>
+    </ContentBlock>
+
   </>
 );
 
-const Cta = () => {
+const Article = (props) => {
   return (
-    <CtaContainer>
-      <CtaLink href="#">Get in touch now!</CtaLink>
-    </CtaContainer>
+    <a style={{display: 'block', textDecoration: 'none', marginBottom: '32px',}} href={props.link}>
+      <h3><TextPrimaryParagraph>{props.title}</TextPrimaryParagraph></h3>
+      <p><TextSecondaryParagraph>{props.description}</TextSecondaryParagraph></p>
+      <p><TextSecondaryParagraph>Read now →</TextSecondaryParagraph></p>
+    </a>
   )
 }
-const CtaContainer = styled.div`
-  position: absolute;
-  right: 32px;
-  width: 220px;
-  height: 220px;
-  transform: rotate(45deg);
-`
-const CtaLink = styled.a`
-  background: ${Colors.green};
-  color: ${Colors.dark};
-`
-
