@@ -16,8 +16,8 @@
   font-family: 'Fakt';
   src: url('../static/Fakt-Normal.woff2') format('woff2'),
        url('../static/Fakt-Normal.woff') format('woff');
-       font-weight: normal;
-       font-style: normal;
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
