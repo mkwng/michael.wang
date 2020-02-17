@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import HeaderImage from '../../static/header@3072.png';
-import { Colors, Breakpoints, TextHeadline } from '../common.js'
+import { Colors, Breakpoints, TextHeadline, TextSubtitle } from '../common.js'
 
 const Header = () => {
   return (
@@ -13,7 +13,7 @@ const Header = () => {
       </HeaderTitleContainer>
       <HeaderIllustrationContainer>
         <img src={HeaderImage} alt='Header image'/>
-        <LastUpdated>Last updated Feb 2020</LastUpdated>
+        <LastUpdated><TextSubtitle>Last updated Feb 2020</TextSubtitle></LastUpdated>
       </HeaderIllustrationContainer>
     </HeaderContainer>
   )
@@ -91,9 +91,9 @@ const LastUpdated = styled.div`
   padding: 8px 16px;
   border: 8px solid ${Colors.dark};
   left: 0;
-  top: 50%;
-  transform: rotate(90deg) translateX(-50%);
+  top: 0;
   transform-origin: bottom left;
+  transform: rotate(90deg) ;
 `
 
 export default Header;

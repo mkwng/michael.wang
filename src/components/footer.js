@@ -1,7 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 import MichaelImage from '../../static/michael@3299.jpg';
-import { Colors, Breakpoints, TextHeadline } from '../common.js'
+import { Colors, Breakpoints, TextHeadline, TextSubtitle } from '../common.js'
 
 const Footer = () => {
   return (
@@ -20,7 +20,7 @@ const Footer = () => {
             objectFit:'contain',
           }} src={MichaelImage} alt='Footer image'/>
         </div>
-        <LastUpdated>Last updated Feb 2020</LastUpdated>
+        <LastUpdated><TextSubtitle>Last updated Feb 2020</TextSubtitle></LastUpdated>
       </FooterIllustrationContainer>
       <FooterTitleContainer>
         <h1><TextHeadline>Let's keep in touch</TextHeadline></h1>
@@ -86,14 +86,14 @@ const FooterTitleContainer = styled.div`
   }
 `
 const LastUpdated = styled.div`
-  background: ${Colors.pink};
+  background: ${Colors.orange};
   position: absolute;
   padding: 8px 16px;
   border: 8px solid ${Colors.dark};
   left: 0;
-  top: 50%;
-  transform: rotate(90deg) translateX(-50%);
+  top: 0;
   transform-origin: bottom left;
+  transform: rotate(90deg) ;
 `
 
 export default Footer;

@@ -1,6 +1,6 @@
-# nano-react-app-template
+# Personal Site of Michael Wang
 
-The template project for [nano-react-app](https://github.com/adrianmcli/nano-react-app).
+The repository for [michael.wang](https://michael.wang).
 
 - `npm start` — This will spawn a development server with a default port of `1234`.
 - `npm run build` — This will output a production build in the `dist` directory.

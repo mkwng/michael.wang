@@ -5,7 +5,7 @@ import { Colors, Breakpoints, TextHeadline, TextPrimaryParagraph, BigButton } fr
 const CaseStudy = (props) => {
   return (
     <CaseStudyContainer {...props}>
-      <div style={{marginBottom: '32px'}}>{props.logo}</div>
+      <div style={{marginBottom: '32px'}}>{props.children}</div>
       <h2 style={{marginBottom: '32px', maxWidth: '62.5%'}}><TextHeadline>{props.title}</TextHeadline></h2>
       <div style={{marginBottom: '32px'}}>{props.image}</div>
       <p style={{marginBottom: '32px'}}><TextPrimaryParagraph>{props.description}</TextPrimaryParagraph></p>

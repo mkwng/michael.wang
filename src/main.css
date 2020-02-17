@@ -2,20 +2,20 @@
 
 @font-face {
 	font-family: 'CriteriaCF';
-	src: url('../static/criteria-cf-bold.eot');
-	src: url('../static/criteria-cf-bold.eot?#iefix') format('embedded-opentype'),
-       url('../static/criteria-cf-bold.woff2') format('woff2'),
-	     url('../static/criteria-cf-bold.woff') format('woff'),
-	     url('../static/criteria-cf-bold.ttf') format('truetype'),
-	     url('../static/criteria-cf-bold.svg#youworkforthem') format('svg');
+	src: url('../static/fonts/criteria-cf-bold.eot');
+	src: url('../static/fonts/criteria-cf-bold.eot?#iefix') format('embedded-opentype'),
+       url('../static/fonts/criteria-cf-bold.woff2') format('woff2'),
+	     url('../static/fonts/criteria-cf-bold.woff') format('woff'),
+	     url('../static/fonts/criteria-cf-bold.ttf') format('truetype'),
+	     url('../static/fonts/criteria-cf-bold.svg#youworkforthem') format('svg');
 	font-weight: bold;
 	font-style: normal;
 }
 
 @font-face {
   font-family: 'Fakt';
-  src: url('../static/Fakt-Normal.woff2') format('woff2'),
-       url('../static/Fakt-Normal.woff') format('woff');
+  src: url('../static/fonts/Fakt-Normal.woff2') format('woff2'),
+       url('../static/fonts/Fakt-Normal.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
