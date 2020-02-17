@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import MichaelImage from '../../static/michael@3299.jpg';
 import { Colors, Breakpoints, TextHeadline, TextSubtitle } from '../common.js'
 
-const Footer = () => {
+const Footer = (props) => {
   return (
-    <FooterContainer>
+    <FooterContainer {...props}>
       <FooterIllustrationContainer>
         <div style={{
           borderRadius: '9999px',

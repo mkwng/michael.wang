@@ -19,7 +19,7 @@ const Cta = () => {
           strokeWidth="8"
         />
       </svg>
-      <a href="#"><TextSubtitle>Get in touch now!</TextSubtitle></a>
+      <a href="#footer"><TextSubtitle>Get in touch now!</TextSubtitle></a>
     </CtaContainer>
   )
 }

@@ -15,7 +15,7 @@ const caseStudies = [
     image: "",
     description: "I joined a team as first design hire to execute on the vision of autonomous personal finance. We wanted to take what a professional financial planner does and make it something everyone can benefit from.",
     ctaText: "Launch project",
-    ctaLink: "https://northstarmoney.com",
+    ctaLink: "https://www.northstarmoney.com",
     accent: Colors.green,
   },
   {
@@ -69,7 +69,7 @@ export default () => (
       If you’re here, you’re trying to figure out what Michael’s deal 
       is. Let’s make it easy: • Designing and developing digital products 
       since 2009 • Based out of Oakland • Currently Head of Design 
-      at <AltA href="https://northstarmoney.com">Northstar</AltA>.
+      at <AltA href="https://www.northstarmoney.com" target="_blank">Northstar</AltA>.
     </TextPrimaryParagraph></ContentBlock>
     <ContentBlock isCompact={true} style={{background: Colors.orange}}>
       <TextSubtitle>Well, is his work any good?</TextSubtitle>
@@ -113,7 +113,7 @@ export default () => (
       { Articles.map( (article, i) => (<Article key={i} {...article} />) ) }
     </ContentBlock>
 
-    <Footer />
+    <Footer id="footer" />
 
     <ContentBlock style={{background: Colors.blue, textAlign: 'center'}}>
       <h2 style={{marginBottom: '32px'}}><TextHeadline>Credits</TextHeadline></h2>
