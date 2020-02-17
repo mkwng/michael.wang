@@ -13,7 +13,7 @@ const caseStudies = [
     logo: "Northstar",
     title: "Making personal finance accessible to all",
     image: "",
-    description: "I joined a team as first design hire to execute on the vision of autonomous personal finance. We wanted to take what a professional financial planner does and make it something everyone can benefit from.",
+    description: "I joined a team as first design hire to execute on the vision of autonomous personal finance. Everyone deserves the peace of mind that their budget, loans, and savings are balanced and allocated in the most efficient places, and we're building the tools to make it available to all.",
     ctaText: "Launch project",
     ctaLink: "https://www.northstarmoney.com",
     accent: Colors.green,
@@ -72,7 +72,7 @@ export default () => (
       at <AltA href="https://www.northstarmoney.com" target="_blank">Northstar</AltA>.
     </TextPrimaryParagraph></ContentBlock>
     <ContentBlock isCompact={true} style={{background: Colors.orange}}>
-      <TextSubtitle>Well, is his work any good?</TextSubtitle>
+      <TextSubtitle>What's he up to nowadays?</TextSubtitle>
     </ContentBlock>
     <CaseStudy {...caseStudies[0]} >
       <svg width="192" height="32" viewBox="0 0 256 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,7 +89,7 @@ export default () => (
       </svg>
     </CaseStudy>
     <ContentBlock isCompact={true} style={{background: Colors.blue}}>
-      <TextSubtitle>Let's see another for good measure</TextSubtitle>
+      <TextSubtitle>What about before that?</TextSubtitle>
     </ContentBlock>
     <CaseStudy {...caseStudies[1]} >
       <svg width="96" height="66" viewBox="0 0 128 88" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -99,7 +99,7 @@ export default () => (
       </svg>
     </CaseStudy>
     <ContentBlock isCompact={true} style={{background: Colors.peach}}>
-      <TextSubtitle>You can have one more, as a treat</TextSubtitle>
+      <TextSubtitle>How about one more, for good measure</TextSubtitle>
     </ContentBlock>
     <CaseStudy {...caseStudies[2]} >
       <svg width="134" height="26" viewBox="0 0 179 35" fill="none" xmlns="http://www.w3.org/2000/svg">

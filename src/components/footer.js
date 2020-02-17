@@ -1,6 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
-import MichaelImage from '../../static/michael@3299.jpg';
+import MichaelImage3299 from '../../static/michael@3299.jpg';
+import MichaelImage2474 from '../../static/michael@2474.jpg';
+import MichaelImage1650 from '../../static/michael@1650.jpg';
+import MichaelImage825 from '../../static/michael@825.jpg';
+import MichaelImage495 from '../../static/michael@495.jpg';
+import MichaelImage330 from '../../static/michael@330.jpg';
+import MichaelImage165 from '../../static/michael@165.jpg';
 import { Colors, Breakpoints, TextHeadline, TextSubtitle } from '../common.js'
 
 const Footer = (props) => {
@@ -14,11 +20,18 @@ const Footer = (props) => {
           height: '256px',
           flexGrow: 0,
         }}>
-          <img style={{
-            width: '100%',
-            height: '100%',
-            objectFit:'contain',
-          }} src={MichaelImage} alt='Footer image'/>
+          <img 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit:'contain',
+              maxWidth: '100%',
+            }} 
+            src={MichaelImage1650} 
+            srcSet={`${MichaelImage3299} 3299w, ${MichaelImage2474} 2474w, ${MichaelImage1650} 1650w, ${MichaelImage825} 825w, ${MichaelImage495} 495w, ${MichaelImage330} 330w, ${MichaelImage165} 165w,` }
+            sizes='256px'
+            alt='Footer image'
+          />
         </div>
         <LastUpdated><TextSubtitle>Last updated Feb 2020</TextSubtitle></LastUpdated>
       </FooterIllustrationContainer>

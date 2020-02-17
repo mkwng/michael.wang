@@ -1,6 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
-import HeaderImage from '../../static/header@3072.png';
+import HeaderImage3072 from '../../static/header@3072.png';
+import HeaderImage2304 from '../../static/header@2304.png';
+import HeaderImage1536 from '../../static/header@1536.png';
+import HeaderImage768 from '../../static/header@768.png';
+import HeaderImage461 from '../../static/header@461.png';
+import HeaderImage307 from '../../static/header@307.png';
+import HeaderImage154 from '../../static/header@154.png';
 import { Colors, Breakpoints, TextHeadline, TextSubtitle } from '../common.js'
 
 const Header = () => {
@@ -12,7 +18,12 @@ const Header = () => {
         <ChineseName>王理棟</ChineseName>
       </HeaderTitleContainer>
       <HeaderIllustrationContainer>
-        <img src={HeaderImage} alt='Header image'/>
+        <img 
+          src={HeaderImage1536} 
+          srcSet={`${HeaderImage3072} 3072w, ${HeaderImage2304} 2304w, ${HeaderImage1536} 1536w, ${HeaderImage768} 768w, ${HeaderImage461} 461w, ${HeaderImage307} 307w, ${HeaderImage154} 154w`}
+          sizes={`(max-width: ${Breakpoints.mobile}) 100w, 50w`}
+          alt='Header image'
+        />
         <LastUpdated><TextSubtitle>Last updated Feb 2020</TextSubtitle></LastUpdated>
       </HeaderIllustrationContainer>
     </HeaderContainer>
