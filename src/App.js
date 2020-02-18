@@ -22,7 +22,7 @@ const caseStudies = [
     logo: "Lyft",
     title: "Helping people make better transportation decisions",
     image: "",
-    description: "While at Lyft, I led and helped scale a team from 4 to 30 at Lyft that focused on multi-modal transportation options. We shipped features such as information like public transportation schedules and routing helped our customers make better, more-informed transportation decisions.",
+    description: "While at Lyft, I led and helped scale a team from 4 to 30 at Lyft that focused on multi-modal transportation options. We shipped features such as public transportation schedules and routing tools that helped our customers make better, more-informed transportation decisions.",
     ctaText: "Download the app",
     ctaLink: "https://lyft.com",
     accent: Colors.pink,
