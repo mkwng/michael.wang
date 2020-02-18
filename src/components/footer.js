@@ -38,7 +38,7 @@ const Footer = (props) => {
       <FooterTitleContainer>
         <h1><TextHeadline>Let's keep in touch</TextHeadline></h1>
         <p style={{fontSize: '24px', marginTop: "16px", color: Colors.beige}}>
-          <a href="mailto:hi@michael.wang">Email</a> • <a href="https://twitter.com/mkwng" target='_blank'>Twitter</a> • <a href="https://linkedin.com/in/mkwng" target='_blank'>LinkedIn</a> • <a href="https://github.com/github" target='_blank'>Github</a>
+          <a href="mailto:hi@michael.wang">Email</a> • <a href="https://twitter.com/mkwng" target='_blank'>Twitter</a> • <a href="https://linkedin.com/in/mkwng" target='_blank'>LinkedIn</a> • <a href="https://github.com/mkwng" target='_blank'>Github</a>
         </p>
       </FooterTitleContainer>
     </FooterContainer>
