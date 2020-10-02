@@ -1,5 +1,7 @@
 # Personal Site of Michael Wang
 
+Test
+
 The repository for [michael.wang](https://michael.wang).
 
 - `npm start` — This will spawn a development server with a default port of `1234`.
