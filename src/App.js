@@ -11,6 +11,9 @@ import './main.css';
 
 
 
+
+
+
 const caseStudies = [
   {
     logo: "Northstar",
