@@ -8,10 +8,13 @@ import CaseStudy from './components/caseStudy';
 import Footer from './components/footer';
 import './main.css';
 
+
+
+
 const caseStudies = [
   {
     logo: "Northstar",
-    title: "Making personal finance accessible to all",
+    title: "Making personal finance accessible to everyone",
     image: "",
     description: "I joined a team as first design hire to execute on the vision of autonomous personal finance. Everyone deserves the peace of mind that their budget, loans, and savings are balanced and allocated in the most efficient places, and we're building the tools to make it available to all.",
     ctaText: "Launch project",
