@@ -68,8 +68,8 @@ export default () => (
     <ContentBlock style={{background: Colors.yellow}}><TextPrimaryParagraph>
       If you’re here, you’re trying to figure out what Michael’s deal 
       is. Let’s make it easy: • Designing and developing digital products 
-      since 2009 • Based out of Oakland • Currently Head of Design 
-      at <AltA href="https://www.northstarmoney.com" target="_blank">Northstar</AltA>.
+      since 2009 • Based out of Oakland • Currently designing 
+      at <AltA href="https://www.github.com" target="_blank">GitHub</AltA>.
     </TextPrimaryParagraph></ContentBlock>
     <ContentBlock isCompact={true} style={{background: Colors.orange}}>
       <TextSubtitle>What's he up to nowadays?</TextSubtitle>
