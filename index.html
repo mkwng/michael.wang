@@ -1,36 +1,176 @@
-<html>
-  <head>
-    <title>Personal Site of Michael Wang</title>
-    <meta name="description" content="Trying to figure out who Michael is? Maybe this website will help. Maybe it won't.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    
-    <meta property="og:title" content="Personal Site of Michael Wang">
-    <meta property="og:description" content="Trying to figure out who Michael is? Maybe this website will help. Maybe it won't.">
-    <meta property="og:image" content="static/thumbnail.png">
-    <meta property="og:url" content="https://michael.wang">
-    <meta property="twitter:creator" content="@mkwng">
-    <meta property="twitter:card" content="summary_large_image" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Personal Site of Michael Wang</title>
+  <meta name="description" content="Trying to figure out who Michael is? Maybe this website will help. Maybe it won't.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="static/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="static/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="static/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="static/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="static/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="static/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="static/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="static/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="static/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="static/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
-    <link rel="manifest" href="static/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#E4BA6E">
-    <meta name="msapplication-TileImage" content="static/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#CDC4C3">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="./src/index.js"></script>
-  </body>
+  <meta property="og:title" content="Personal Site of Michael Wang">
+  <meta property="og:description" content="Trying to figure out who Michael is? Maybe this website will help. Maybe it won't.">
+  <meta property="og:image" content="static/thumbnail.png">
+  <meta property="og:url" content="https://michael.wang">
+  <meta property="twitter:creator" content="@mkwng">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="static/fonts/Fakt-Normal.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#E4BA6E">
+  <meta name="theme-color" content="#CDC4C3">
+
+  <!-- DNS prefetch for external links -->
+  <link rel="dns-prefetch" href="https://www.anthropic.com">
+
+  <style>
+    @font-face {
+      font-family: 'Fakt';
+      src: url('static/fonts/Fakt-Normal.woff2') format('woff2'),
+           url('static/fonts/Fakt-Normal.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+
+    body {
+      color: #30333A;
+      background: #CDC4C3;
+      font-family: 'Fakt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    a { color: inherit; text-decoration-color: inherit; }
+
+    .page {
+      background: #CDC4C3;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .illustration {
+      flex: none;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 48px;
+    }
+
+    .illustration img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .content {
+      flex: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      color: #30333A;
+    }
+
+    .content a {
+      color: #30333A;
+      text-decoration-color: rgba(48, 51, 58, 0.25);
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    .content a:hover {
+      text-decoration-color: #30333A;
+    }
+
+    .name {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1;
+    }
+
+    .chinese-name {
+      margin-left: 4px;
+      opacity: 0.35;
+    }
+
+    .bio {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-top: 16px;
+      max-width: 340px;
+    }
+
+    .links {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+
+    .dot {
+      margin: 0 6px;
+      opacity: 0.3;
+    }
+
+    @media (max-width: 640px) {
+      .page { flex-direction: column; }
+      .illustration { height: auto; margin-right: 0; margin-bottom: 16px; }
+      .illustration img { max-height: 35vh; width: auto; }
+      .content { padding: 24px 28px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="illustration">
+      <picture>
+        <source
+          type="image/webp"
+          srcset="static/header@3072.webp 3072w, static/header@2304.webp 2304w, static/header@1536.webp 1536w, static/header@768.webp 768w, static/header@461.webp 461w, static/header@307.webp 307w, static/header@154.webp 154w"
+          sizes="(max-width: 640px) 100vw, 40vw"
+        >
+        <img
+          src="static/header@768.png"
+          srcset="static/header@3072.png 3072w, static/header@2304.png 2304w, static/header@1536.png 1536w, static/header@768.png 768w, static/header@461.png 461w, static/header@307.png 307w, static/header@154.png 154w"
+          sizes="(max-width: 640px) 100vw, 40vw"
+          alt="Illustration of Michael Wang"
+          width="768"
+          height="1024"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
+    </div>
+    <div class="content">
+      <h1 class="name">Michael Wang <span class="chinese-name">王理棟</span></h1>
+      <p class="bio">
+        Digital product designer since 2009. Based in Oakland. Currently designing at
+        <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>.
+      </p>
+      <nav class="links">
+        <a href="mailto:hi@michael.wang">Email</a>
+        <span class="dot">&middot;</span>
+        <a href="https://twitter.com/mkwng" target="_blank" rel="noopener">Twitter</a>
+        <span class="dot">&middot;</span>
+        <a href="https://linkedin.com/in/mkwng" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="dot">&middot;</span>
+        <a href="https://github.com/mkwng" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </div>
+</body>
 </html>
