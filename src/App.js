@@ -98,8 +98,10 @@ const Bio = styled.p`
     color: ${Colors.dark};
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
+    opacity: 1;
+    transition: opacity 0.2s ease;
     &:hover {
-      opacity: 0.6;
+      opacity: 0.5;
     }
   }
 `;
@@ -113,11 +115,12 @@ const Links = styled.nav`
   a {
     font-size: 16px;
     color: ${Colors.dark};
-    text-decoration: none;
-    opacity: 0.35;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    opacity: 1;
     transition: opacity 0.2s ease;
     &:hover {
-      opacity: 1;
+      opacity: 0.5;
     }
   }
 `;
