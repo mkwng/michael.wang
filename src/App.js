@@ -12,23 +12,6 @@ import './main.css';
 
 export default () => (
   <Page>
-    <Content>
-      <Name>Michael Wang</Name>
-      <ChineseName>王理棟</ChineseName>
-      <Bio>
-        Digital product designer since 2009. Based in Oakland. Currently designing at{' '}
-        <a href="https://www.github.com" target="_blank">GitHub</a>.
-      </Bio>
-      <Links>
-        <a href="mailto:hi@michael.wang">Email</a>
-        <Dot />
-        <a href="https://twitter.com/mkwng" target="_blank">Twitter</a>
-        <Dot />
-        <a href="https://read.cv/michael" target="_blank">CV</a>
-        <Dot />
-        <a href="https://github.com/mkwng" target="_blank">GitHub</a>
-      </Links>
-    </Content>
     <Illustration>
       <img
         src={HeaderImage1536}
@@ -37,15 +20,32 @@ export default () => (
         alt="Illustration of Michael Wang"
       />
     </Illustration>
+    <Content>
+      <Name>Michael Wang</Name>
+      <ChineseName>王理棟</ChineseName>
+      <Bio>
+        Digital product designer since 2009. Based in Oakland. Currently designing at{' '}
+        <a href="https://www.anthropic.com" target="_blank">Anthropic</a>.
+      </Bio>
+      <Links>
+        <a href="mailto:hi@michael.wang">Email</a>
+        <Dot />
+        <a href="https://twitter.com/mkwng" target="_blank">Twitter</a>
+        <Dot />
+        <a href="https://linkedin.com/in/mkwng" target="_blank">LinkedIn</a>
+        <Dot />
+        <a href="https://github.com/mkwng" target="_blank">GitHub</a>
+      </Links>
+    </Content>
   </Page>
 );
 
 const Dot = () => <DotSpan>&middot;</DotSpan>;
 
 const DotSpan = styled.span`
-  margin: 0 12px;
+  margin: 0 8px;
   color: ${Colors.dark};
-  opacity: 0.3;
+  opacity: 0.25;
 `;
 
 const Page = styled.div`
@@ -66,20 +66,17 @@ const Page = styled.div`
 
 const Content = styled.div`
   flex: 1;
-  padding: 64px 80px;
+  padding: 48px 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 1;
 
-  @media only screen and (max-width: ${Breakpoints.desktop}) {
-    padding: 48px 64px;
-  }
   @media only screen and (max-width: ${Breakpoints.tablet}) {
-    padding: 40px 48px;
+    padding: 32px 40px;
   }
   @media only screen and (max-width: ${Breakpoints.mobile}) {
-    padding: 32px 32px 0;
+    padding: 24px 28px 0;
     flex: none;
     text-align: center;
     align-items: center;
@@ -87,66 +84,59 @@ const Content = styled.div`
 `;
 
 const Name = styled.h1`
-  font-family: 'CriteriaCF', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', sans-serif;
-  font-weight: bold;
-  font-size: 72px;
-  text-transform: lowercase;
+  font-size: 18px;
+  font-weight: normal;
   color: ${Colors.dark};
   line-height: 1;
-  letter-spacing: -1px;
 
-  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 56px; }
-  @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 48px; }
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 36px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 16px; }
 `;
 
 const ChineseName = styled.span`
-  font-size: 18px;
+  font-size: 13px;
   color: ${Colors.dark};
-  opacity: 0.4;
-  margin-top: 8px;
-  letter-spacing: 4px;
+  opacity: 0.35;
+  margin-top: 6px;
+  letter-spacing: 3px;
 
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 14px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 11px; }
 `;
 
 const Bio = styled.p`
-  font-size: 22px;
+  font-size: 14px;
   line-height: 1.6;
   color: ${Colors.dark};
-  margin-top: 32px;
-  max-width: 420px;
-  opacity: 0.75;
+  margin-top: 20px;
+  max-width: 320px;
+  opacity: 0.6;
 
   a {
     color: ${Colors.dark};
     text-decoration-color: ${Colors.dark};
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
     &:hover {
       opacity: 0.6;
     }
   }
 
-  @media only screen and (max-width: ${Breakpoints.desktop}) { font-size: 20px; }
-  @media only screen and (max-width: ${Breakpoints.tablet}) { font-size: 18px; }
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 16px; }
+  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 13px; }
 `;
 
 const Links = styled.nav`
-  margin-top: 32px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 
   a {
-    font-size: 15px;
+    font-size: 12px;
     color: ${Colors.dark};
     text-decoration: none;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: normal;
-    opacity: 0.5;
+    opacity: 0.4;
     transition: opacity 0.2s ease;
     &:hover {
       opacity: 1;
@@ -154,7 +144,7 @@ const Links = styled.nav`
   }
 
   @media only screen and (max-width: ${Breakpoints.tiny}) {
-    a { font-size: 13px; }
+    a { font-size: 11px; }
   }
 `;
 
