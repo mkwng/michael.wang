@@ -152,15 +152,13 @@ const Illustration = styled.div`
   flex: 1;
   height: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  overflow: hidden;
 
   img {
-    height: 90%;
-    width: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    object-position: bottom;
   }
 
   @media only screen and (max-width: ${Breakpoints.mobile}) {
@@ -168,7 +166,6 @@ const Illustration = styled.div`
     width: 100%;
     min-height: 0;
     img {
-      height: 100%;
       max-height: 45vh;
     }
   }
