@@ -39,9 +39,6 @@ body {
 }
 
 a {
-  color: #30333A;
-  text-decoration-color: #30333A;
-}
-a:hover {
-  text-decoration-color: #E4BA6E;
+  color: inherit;
+  text-decoration-color: inherit;
 }

@@ -43,8 +43,6 @@ const Dot = () => <DotSpan>&middot;</DotSpan>;
 
 const DotSpan = styled.span`
   margin: 0 6px;
-  color: ${Colors.dark};
-  opacity: 0.25;
 `;
 
 const Page = styled.div`
@@ -68,6 +66,18 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 1;
+  color: ${Colors.dark};
+
+  a {
+    color: ${Colors.dark};
+    text-decoration-color: ${Colors.beige};
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s ease;
+    &:hover {
+      text-decoration-color: ${Colors.dark};
+    }
+  }
 
   @media only screen and (max-width: ${Breakpoints.mobile}) {
     padding: 24px 28px 0;
@@ -77,33 +87,18 @@ const Content = styled.div`
 const Name = styled.h1`
   font-size: 16px;
   font-weight: normal;
-  color: ${Colors.dark};
   line-height: 1;
 `;
 
 const ChineseName = styled.span`
-  opacity: 0.35;
   margin-left: 4px;
 `;
 
 const Bio = styled.p`
   font-size: 16px;
   line-height: 1.6;
-  color: ${Colors.dark};
   margin-top: 16px;
   max-width: 340px;
-  opacity: 0.55;
-
-  a {
-    color: ${Colors.dark};
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px;
-    opacity: 1;
-    transition: opacity 0.2s ease;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
 `;
 
 const Links = styled.nav`
@@ -111,18 +106,7 @@ const Links = styled.nav`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-
-  a {
-    font-size: 16px;
-    color: ${Colors.dark};
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1px;
-    opacity: 1;
-    transition: opacity 0.2s ease;
-    &:hover {
-      opacity: 0.5;
-    }
-  }
+  font-size: 16px;
 `;
 
 const Illustration = styled.div`
