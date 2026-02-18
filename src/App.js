@@ -43,6 +43,7 @@ const Dot = () => <DotSpan>&middot;</DotSpan>;
 
 const DotSpan = styled.span`
   margin: 0 6px;
+  opacity: 0.3;
 `;
 
 const Page = styled.div`
@@ -70,7 +71,7 @@ const Content = styled.div`
 
   a {
     color: ${Colors.dark};
-    text-decoration-color: ${Colors.beige};
+    text-decoration-color: rgba(48, 51, 58, 0.25);
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
     transition: text-decoration-color 0.2s ease;
