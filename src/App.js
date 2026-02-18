@@ -16,13 +16,12 @@ export default () => (
       <img
         src={HeaderImage1536}
         srcSet={`${HeaderImage3072} 3072w, ${HeaderImage2304} 2304w, ${HeaderImage1536} 1536w, ${HeaderImage768} 768w, ${HeaderImage461} 461w, ${HeaderImage307} 307w, ${HeaderImage154} 154w`}
-        sizes="(max-width: 640px) 100vw, 50vw"
+        sizes="(max-width: 640px) 100vw, 40vw"
         alt="Illustration of Michael Wang"
       />
     </Illustration>
     <Content>
-      <Name>Michael Wang</Name>
-      <ChineseName>王理棟</ChineseName>
+      <Name>Michael Wang <ChineseName>王理棟</ChineseName></Name>
       <Bio>
         Digital product designer since 2009. Based in Oakland. Currently designing at{' '}
         <a href="https://www.anthropic.com" target="_blank">Anthropic</a>.
@@ -43,7 +42,7 @@ export default () => (
 const Dot = () => <DotSpan>&middot;</DotSpan>;
 
 const DotSpan = styled.span`
-  margin: 0 8px;
+  margin: 0 6px;
   color: ${Colors.dark};
   opacity: 0.25;
 `;
@@ -55,118 +54,95 @@ const Page = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
 
   @media only screen and (max-width: ${Breakpoints.mobile}) {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 `;
 
 const Content = styled.div`
-  flex: 1;
-  padding: 48px 64px;
+  flex: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   z-index: 1;
 
-  @media only screen and (max-width: ${Breakpoints.tablet}) {
-    padding: 32px 40px;
-  }
   @media only screen and (max-width: ${Breakpoints.mobile}) {
     padding: 24px 28px 0;
-    flex: none;
-    text-align: center;
-    align-items: center;
   }
 `;
 
 const Name = styled.h1`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
   color: ${Colors.dark};
   line-height: 1;
-
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 16px; }
 `;
 
 const ChineseName = styled.span`
-  font-size: 13px;
-  color: ${Colors.dark};
   opacity: 0.35;
-  margin-top: 6px;
-  letter-spacing: 3px;
-
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 11px; }
+  margin-left: 4px;
 `;
 
 const Bio = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: ${Colors.dark};
-  margin-top: 20px;
-  max-width: 320px;
-  opacity: 0.6;
+  margin-top: 16px;
+  max-width: 340px;
+  opacity: 0.55;
 
   a {
     color: ${Colors.dark};
-    text-decoration-color: ${Colors.dark};
     text-underline-offset: 2px;
     text-decoration-thickness: 1px;
     &:hover {
       opacity: 0.6;
     }
   }
-
-  @media only screen and (max-width: ${Breakpoints.tiny}) { font-size: 13px; }
 `;
 
 const Links = styled.nav`
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 
   a {
-    font-size: 12px;
+    font-size: 16px;
     color: ${Colors.dark};
     text-decoration: none;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    font-weight: normal;
-    opacity: 0.4;
+    opacity: 0.35;
     transition: opacity 0.2s ease;
     &:hover {
       opacity: 1;
     }
   }
-
-  @media only screen and (max-width: ${Breakpoints.tiny}) {
-    a { font-size: 11px; }
-  }
 `;
 
 const Illustration = styled.div`
-  flex: 1;
-  height: 100%;
+  flex: none;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 48px;
 
   img {
-    width: 100%;
     height: 100%;
+    width: auto;
     object-fit: contain;
   }
 
   @media only screen and (max-width: ${Breakpoints.mobile}) {
-    flex: 1;
-    width: 100%;
-    min-height: 0;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 16px;
     img {
-      max-height: 45vh;
+      max-height: 35vh;
+      width: auto;
     }
   }
 `;
