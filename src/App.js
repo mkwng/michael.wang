@@ -92,6 +92,7 @@ const Name = styled.h1`
 
 const ChineseName = styled.span`
   margin-left: 4px;
+  opacity: 0.35;
 `;
 
 const Bio = styled.p`
