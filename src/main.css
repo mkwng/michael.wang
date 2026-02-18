@@ -26,21 +26,19 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   color: #30333A;
-  background: #30333A;
+  background: #CDC4C3;
   font-family: 'Fakt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-display: swap;
 }
 
 a {
-  color: #30333A;
-  text-decoration-color: #F2EFEC;
-}
-a:hover {
-  text-decoration-color: #E4BA6E;
+  color: inherit;
+  text-decoration-color: inherit;
 }
