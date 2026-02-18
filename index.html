@@ -37,13 +37,22 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: 'Fakt Fallback';
+      src: local('Arial'), local('Helvetica Neue'), local('Helvetica');
+      size-adjust: 100.4%;
+      ascent-override: 96%;
+      descent-override: 24%;
+      line-gap-override: 0%;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { height: 100%; overflow: hidden; }
 
     body {
       color: #30333A;
       background: #CDC4C3;
-      font-family: 'Fakt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: 'Fakt', 'Fakt Fallback', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
     a { color: inherit; text-decoration-color: inherit; }
@@ -103,7 +112,7 @@
 
     .chinese-name {
       margin-left: 4px;
-      opacity: 0.35;
+      opacity: 0.6;
     }
 
     .bio {
@@ -135,7 +144,7 @@
   </style>
 </head>
 <body>
-  <div class="page">
+  <main class="page">
     <div class="illustration">
       <picture>
         <source
@@ -171,6 +180,6 @@
         <a href="https://github.com/mkwng" target="_blank" rel="noopener">GitHub</a>
       </nav>
     </div>
-  </div>
+  </main>
 </body>
 </html>
