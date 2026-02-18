@@ -1,0 +1,16 @@
+# Cache static assets aggressively (fonts, images)
+/static/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/static/header@*
+  Cache-Control: public, max-age=31536000, immutable
+
+/static/favicon/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML — short cache with revalidation so deploys go live fast
+/
+  Cache-Control: public, max-age=300, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
