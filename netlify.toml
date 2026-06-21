@@ -3,3 +3,18 @@
   # Publishing dist/ keeps us compatible with the dashboard's publish dir.
   command = "rm -rf dist && mkdir -p dist && cp -R _headers static *.html dist/"
   publish = "dist"
+
+# The two-day Lisbon page is now split; send /lisbon (and the old .html) to
+# Day 1 at the edge. force = true makes the 301 fire even though lisbon.html
+# still exists as a fallback for direct/offline use.
+[[redirects]]
+  from = "/lisbon"
+  to = "/lisbon-day-1.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/lisbon.html"
+  to = "/lisbon-day-1.html"
+  status = 301
+  force = true
