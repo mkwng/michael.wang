@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Today — an easy afternoon, ending at dinner</title>
+<meta name="description" content="A pared-back plan for a hot, late-starting day: the Setúbal market before it shuts, an unhurried lunch, the pool through the afternoon, and the Casa das Tortas dinner reservation in Azeitão.">
+<!-- Social / link previews -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="michael.wang">
+<meta property="og:title" content="Today — an easy afternoon">
+<meta property="og:description" content="Market before it shuts, an unhurried lunch, the pool, and our table in Azeitão for dinner. No rush.">
+<meta property="og:url" content="https://michael.wang/today.html">
+<meta property="og:image" content="https://michael.wang/static/og/hot-day.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Today — an easy afternoon">
+<meta name="twitter:description" content="Market before it shuts, an unhurried lunch, the pool, and our table in Azeitão for dinner.">
+<meta name="twitter:image" content="https://michael.wang/static/og/hot-day.jpg">
+<meta name="theme-color" content="#1E3D7B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="static/itinerary.css">
+<link rel="stylesheet" href="static/itinerary-map.css">
+</head>
+<body class="has-map">
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#1E3D7B" stroke-width="1.2">
+        <g><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,0)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(0,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+      </g>
+    </svg>
+    <div>
+      <p class="eyebrow">Today &middot; Sun 21 June &middot; The easy version</p>
+      <h1 class="title serif">An Easy <span class="amp">Afternoon</span></h1>
+      <p class="dek">We started late and it's hot, so today is trimmed to the essentials: the covered market in Setúbal before it shuts at two, an unhurried lunch, the pool through the worst of the afternoon, and our table in Azeitão for dinner. One short drive out, one short drive back.</p>
+      <div class="meta">
+        <span><b>From ~12:30</b></span><span class="dot">·</span>
+        <span>take it slow</span><span class="dot">·</span>
+        <span>ends at <b>Casa das Tortas</b></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="daynav">
+    <a href="today.html" class="on" aria-current="page">Today</a>
+    <a href="lisbon-day-1.html">Lisbon · Day 1</a>
+    <a href="lisbon-day-2.html">Lisbon · Day 2</a>
+    <a href="arrabida.html">Arrábida</a>
+    <a href="hot-day.html">Hot day</a>
+  </nav>
+
+  <section class="glance">
+    <h2>The plan — do less, end at dinner</h2>
+    <div class="glance-grid">
+      <div class="gcell"><div class="t">~12:30</div><div class="l">Market &amp; lunch, Setúbal</div></div>
+      <div class="gcell"><div class="t">~3:00</div><div class="l">Pool &amp; shade</div></div>
+      <div class="gcell"><div class="t">7:30</div><div class="l">Dinner, Casa das Tortas</div></div>
+    </div>
+  </section>
+
+  <figure class="hero">
+    <div class="photo"><img src="static/setubal/livramento.jpg" alt="Azulejo tile panels inside the Mercado do Livramento, Setúbal" loading="eager"></div>
+    <figcaption class="cap"><span class="pin">↑</span><span>Mercado do Livramento — go straight there; it shuts at two.</span></figcaption>
+  </figure>
+
+  <div class="stops">
+
+    <!-- 01 -->
+    <section class="stop" data-lat="38.5236" data-lng="-8.8937" data-label="Setúbal — market &amp; lunch" data-pin="1">
+      <div class="rail"><div class="node">01</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Now</span><span class="time">· ~12:30</span></div>
+        <h3>Straight to the market</h3>
+        <p class="theme">Setúbal — and lunch right after</p>
+        <p>It closes at two, so it's the one timed thing today: head in first. The covered Mercado do Livramento is wrapped in tiled fishing scenes — cool, busy, free. A loop of the stalls, then lunch two minutes away on Avenida Luísa Todi.</p>
+        <div class="duo">
+          <figure>
+            <div class="photo"><img src="static/setubal/livramento.jpg" alt="Azulejo panels in the Mercado do Livramento" loading="eager"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>The market's tiled walls.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="static/setubal/chocofrito.jpg" alt="A plate of choco frito" loading="lazy"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>Choco frito — Setúbal's own fried cuttlefish.</span></figcaption>
+          </figure>
+        </div>
+        <ul class="where">
+          <li><div class="name">Mercado do Livramento <span class="pill alt">Closes ~2pm</span></div><div class="desc">A vast covered market in azulejo — fish, fruit, cheese, flowers. Cool and free; go straight there before it shuts.</div></li>
+          <li class="has-thumb"><img class="thumb" src="static/setubal/chocofrito.jpg" alt="Choco frito" loading="lazy"><div class="vtext"><div class="name">Lunch — choco frito <span class="pill">Local dish</span></div><div class="desc">Setúbal's fried cuttlefish, two minutes from the market. <b>Casa Santiago</b> or <b>O Baluarte do Sado</b> on Avenida Luísa Todi.</div></div></li>
+        </ul>
+        <div class="note"><b>Go now</b>The market is the only timed thing today — it closes around 2pm. Park on Avenida Luísa Todi, a couple of minutes away.</div>
+      </div>
+    </section>
+
+    <!-- pause -->
+    <section class="stop is-pause">
+      <div class="rail"><div class="node pause">✦</div></div>
+      <div class="body">
+        <div class="kicker">Afternoon <span class="time">· ~3:00</span></div>
+        <h3>Back to the pool</h3>
+        <div class="pausecard">
+          <p>Out of the heat for a few hours — pool, shade, naps. Nothing is booked until dinner, so there's no clock on the afternoon. If anyone gets restless later, Azeitão is five minutes away for a wander and a cheese run before your table.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="stop" data-lat="38.5118" data-lng="-9.0148" data-label="Casa das Tortas" data-pin="2">
+      <div class="rail"><div class="node">02</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Evening</span><span class="time">· 7:30</span></div>
+        <h3>Dinner at Casa das Tortas</h3>
+        <p class="theme">the reservation, in Azeitão</p>
+        <p>The table you already booked, on Praça da República in the heart of Azeitão — five minutes from the house. Courtyard grill, black pork, fish off the BBQ, local wine, and the cheese and tortas the village is named for.</p>
+        <figure>
+          <div class="photo"><img src="static/arrabida/dinner.jpg" alt="Casa das Tortas restaurant, Azeitão" loading="lazy"></div>
+          <figcaption class="cap"><span class="pin">◷</span><span>Casa das Tortas — your 7:30 table.</span></figcaption>
+        </figure>
+        <ul class="where">
+          <li><div class="name">Casa das Tortas <span class="pill">Reserved · 7:30</span></div><div class="desc">Black pork, fish off the courtyard BBQ, local wine, and — of course — the cheese and tortas.</div></li>
+          <li class="has-thumb"><img class="thumb" src="static/arrabida/azeitao2.jpg" alt="Soft Queijo de Azeitão" loading="lazy"><div class="vtext"><div class="name">Queijo &amp; tortas de Azeitão <span class="pill alt">If you're early</span></div><div class="desc">Swing through the village a little before your table — grab the soft sheep's cheese and the rolled tortas to take home.</div></div></li>
+        </ul>
+        <div class="note"><b>Booked</b>Reservation at 7:30 — a five-minute drive from the house. Name a lead car for the short hop over.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <h2>Good to know</h2>
+    <p class="sub">Today, kept simple</p>
+    <ul class="checklist">
+      <li><span><b>The market closes ~2pm.</b> It's the only timed thing before dinner — go straight there, wander, then eat nearby.</span></li>
+      <li><span><b>Dinner is booked.</b> Casa das Tortas, Praça da República, Azeitão — 7:30, five minutes from the house.</span></li>
+      <li><span><b>Everything else is optional.</b> The plan for the afternoon is the pool; Azeitão's there if anyone wants a pre-dinner wander.</span></li>
+    </ul>
+    <p class="colophon">The whole point of today is to do less. Market, lunch, water, dinner — and nothing in between you have to make.</p>
+  </footer>
+
+  <p class="alsosee">The fuller versions → <a href="hot-day.html">Out of the Sun (Setúbal &amp; Azeitão)</a> &nbsp;·&nbsp; <a href="arrabida.html">Castle, Coast &amp; Cheese</a></p>
+
+</div>
+
+<div class="trip-map-shell" aria-label="Map of today's stops">
+  <button class="map-toggle" id="mapToggle" aria-expanded="true">Hide map</button>
+  <div class="map-now"><span class="i">Now</span><span id="mapNowLabel">—</span></div>
+  <div id="trip-map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="static/itinerary-map.js"></script>
+</body>
+</html>
