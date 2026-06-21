@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Out of the Sun — a hot-day plan around Setúbal &amp; Azeitão</title>
+<meta name="description" content="A shade-first hot-day plan near Azeitão: a cool covered market and museum in Setúbal, a choco-frito lunch, and the tiled palace, shaded gardens and cool cellars of Azeitão — pool by five.">
+<!-- Social / link previews -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="michael.wang">
+<meta property="og:title" content="Out of the Sun — a hot-day plan around Setúbal &amp; Azeitão">
+<meta property="og:description" content="Cool markets, cooler cellars, shaded tile — a low-effort indoor loop near the house, with a live map that follows as you scroll.">
+<meta property="og:url" content="https://michael.wang/hot-day.html">
+<meta property="og:image" content="https://michael.wang/static/og/hot-day.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Out of the Sun — a hot-day plan around Setúbal &amp; Azeitão">
+<meta name="twitter:description" content="Cool markets, cooler cellars, shaded tile — a low-effort indoor loop near the house.">
+<meta name="twitter:image" content="https://michael.wang/static/og/hot-day.jpg">
+<meta name="theme-color" content="#1E3D7B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="static/itinerary.css">
+<link rel="stylesheet" href="static/itinerary-map.css">
+</head>
+<body class="has-map">
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#1E3D7B" stroke-width="1.2">
+        <g><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,0)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(0,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+      </g>
+    </svg>
+    <div>
+      <p class="eyebrow">Setúbal &amp; Azeitão &middot; A hot-day plan &middot; Shade &amp; indoors</p>
+      <h1 class="title serif">Out of <span class="amp">the</span> Sun</h1>
+      <p class="dek">For when the thermometer climbs: a cool covered market, air-conditioned museum rooms, and shaded tile-lined gardens — a low-effort loop of old stone and cellar air, anchored on the house just southwest of Azeitão. Pool by five.</p>
+      <div class="meta">
+        <span><b>A hot day</b></span><span class="dot">·</span>
+        <span>shade-first, 3 stops</span><span class="dot">·</span>
+        <span>best <b>Tue–Sat</b></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="daynav">
+    <a href="lisbon-day-1.html">Lisbon · Day 1</a>
+    <a href="lisbon-day-2.html">Lisbon · Day 2</a>
+    <a href="arrabida.html">Arrábida</a>
+    <a href="hot-day.html" class="on" aria-current="page">Hot day</a>
+  </nav>
+
+  <section class="glance">
+    <h2>The day — chase the shade, end at the pool</h2>
+    <div class="glance-grid">
+      <div class="gcell"><div class="t">~9:30</div><div class="l">Covered market, Setúbal</div></div>
+      <div class="gcell"><div class="t">~11:00</div><div class="l">A cool museum</div></div>
+      <div class="gcell"><div class="t">~13:00</div><div class="l">Choco-frito lunch</div></div>
+      <div class="gcell"><div class="t">~15:00</div><div class="l">Bacalhôa gardens</div></div>
+      <div class="gcell"><div class="t">~16:30</div><div class="l">Cool cellars, Azeitão</div></div>
+      <div class="gcell"><div class="t">~17:30</div><div class="l">Pool at the house</div></div>
+    </div>
+  </section>
+
+  <figure class="hero">
+    <div class="photo"><img src="static/setubal/livramento.jpg" alt="Azulejo tile panels inside the Mercado do Livramento, Setúbal" loading="eager"></div>
+    <figcaption class="cap"><span class="pin">↑</span><span>Mercado do Livramento — tiled fishing scenes over the stalls, and shade all morning.</span></figcaption>
+  </figure>
+
+  <div class="stops">
+
+    <!-- 01 -->
+    <section class="stop" data-lat="38.5236" data-lng="-8.8937" data-label="Setúbal — market &amp; museum" data-pin="1">
+      <div class="rail"><div class="node">01</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Car move 1</span><span class="time">· ~9:30</span></div>
+        <h3>Setúbal — the cool morning</h3>
+        <p class="theme">a covered market, a quiet museum, a fried-cuttlefish lunch</p>
+        <p>Twenty minutes east, and entirely indoors: one of the great covered markets in the country, a hushed convent museum two streets over, and the city's own fried dish for lunch. Park once near the waterfront and walk it all in the shade.</p>
+        <div class="duo">
+          <figure>
+            <div class="photo"><img src="static/setubal/livramento.jpg" alt="Azulejo panels in the Mercado do Livramento" loading="eager"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>Mercado do Livramento — its famous tiled walls.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="static/setubal/convento.jpg" alt="Twisted Arrábida-marble columns inside the Igreja de Jesus, Setúbal" loading="lazy"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>Convento de Jesus — rope-twist stone columns.</span></figcaption>
+          </figure>
+        </div>
+        <ul class="where">
+          <li><div class="name">Mercado do Livramento <span class="pill alt">Free</span></div><div class="desc">A vast covered market wrapped in azulejo panels of the fishing life — fish, fruit, cheese, flowers. Cool, busy, free to wander. Closes ~2pm, shut Mondays.</div></li>
+          <li><div class="name">Convento de Jesus / Museu de Setúbal</div><div class="desc">Air-conditioned calm: one of the first Manueline buildings, with rope-twist Arrábida-marble columns and a tiled chancel. Small, ~45 min. Closed Mondays.</div></li>
+          <li><div class="name">Lunch — choco frito <span class="pill">Local dish</span></div><div class="desc">Setúbal's own: fried strips of cuttlefish with lemon. <b>Casa Santiago</b> (the famous one) or <b>O Baluarte do Sado</b> (lunch only, traditional) along Avenida Luísa Todi.</div></li>
+          <li><div class="name">Coffee — The Coffee</div><div class="desc">A proper specialty cup on Rua de Augusto Cardoso if you need a third-wave fix before the drive back.</div></li>
+        </ul>
+        <div class="note"><b>Park</b>The waterfront lots along Avenida Luísa Todi, a couple of minutes from both the market and the convent. Mornings are easy.</div>
+        <div class="note"><b>Heat plan</b>Market and museum are the coolest rooms of the day — do them before noon, then eat indoors while the sun is at its worst.</div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="stop" data-lat="38.5098" data-lng="-8.9979" data-label="Quinta da Bacalhôa" data-pin="2">
+      <div class="rail"><div class="node">02</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Car move 2</span><span class="time">· ~3:00</span></div>
+        <h3>Quinta da Bacalhôa</h3>
+        <p class="theme">a tiled Renaissance palace &amp; its shaded gardens</p>
+        <p>Back toward the house: a 15th-century palace with some of the oldest dated azulejos in Portugal, a box-hedged garden, a long water tank and a tiled pavilion to sit in. Shade, stone and tilework for the hottest hour, with room for the kids to roam.</p>
+        <div class="duo">
+          <figure>
+            <div class="photo"><img src="static/setubal/bacalhoa.jpg" alt="Blue-and-white azulejo panel at the Palácio da Bacalhôa" loading="lazy"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>Palácio da Bacalhôa — five centuries of azulejo.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="static/setubal/bacalhoa-garden.jpg" alt="Gardens and vineyard of the Quinta da Bacalhôa" loading="lazy"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>The quinta — hedged gardens and the old estate.</span></figcaption>
+          </figure>
+        </div>
+        <ul class="where">
+          <li><div class="name">The palace &amp; azulejos <span class="pill alt">Book ahead</span></div><div class="desc">Guided, in English or Portuguese — Moorish-style tiles, the lake, the pavilion. ~€10 with a tasting; reserve by phone/email. Gardens Mon–Sat (shut Sunday).</div></li>
+          <li><div class="name">The gardens &amp; water tank</div><div class="desc">Box hedges, citrus and a long mirror of water — the shadiest place to let the little ones loose.</div></li>
+          <li><div class="name">Wine tasting <span class="pill">Adults</span></div><div class="desc">Bacalhôa is a serious producer; the tasting is folded into the visit for the grown-ups.</div></li>
+        </ul>
+        <div class="note"><b>Reserve</b>Visits are by appointment only and in set time slots — call ahead the day before, especially for a group.</div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="stop" data-lat="38.5128" data-lng="-9.0136" data-label="José Maria da Fonseca" data-pin="3">
+      <div class="rail"><div class="node">03</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Car move 3</span><span class="time">· ~4:30</span></div>
+        <h3>José Maria da Fonseca</h3>
+        <p class="theme">cool cellars, Moscatel &amp; a gelato in the village</p>
+        <p>Into Vila Nogueira de Azeitão, five minutes from the house: the oldest table-wine producer in Portugal, a creaky house-museum and dim, cellar-cool cask rooms stacked with ageing Moscatel de Setúbal. The most low-effort way to wait out the last of the heat before the pool.</p>
+        <figure>
+          <div class="photo"><img src="static/setubal/fonseca.jpg" alt="The José Maria da Fonseca wine house and cellars, Azeitão" loading="lazy"></div>
+          <figcaption class="cap"><span class="pin">◷</span><span>José Maria da Fonseca — the house and cellars, in the middle of the village.</span></figcaption>
+        </figure>
+        <ul class="where">
+          <li><div class="name">Cellar tour &amp; tasting <span class="pill">Kids free</span></div><div class="desc">A guided loop of the house-museum and the cool cask cellars, finishing on a red and a Moscatel. ~€10; under-10s free. Summer tours ~10–12 &amp; 2:30–5:30 — reserve.</div></li>
+          <li><div class="name">Queijo &amp; tortas de Azeitão</div><div class="desc">While you're in the village, grab the soft sheep's cheese and the rolled tortas to take back.</div></li>
+          <li><div class="name">Gelato — Café do Morango</div><div class="desc">A friendly village café for an ice cream and a flat surface to sit on before the short hop home.</div></li>
+        </ul>
+        <div class="note"><b>Reserve</b>Tours run at set times in English; book the morning of, or the day before for the group.</div>
+      </div>
+    </section>
+
+    <!-- pause / cool-down -->
+    <section class="stop is-pause">
+      <div class="rail"><div class="node pause">✦</div></div>
+      <div class="body">
+        <div class="kicker">Late afternoon <span class="time">· ~5:30</span></div>
+        <h3>Back to the pool</h3>
+        <div class="pausecard">
+          <p>Five minutes home and into the water. The whole day was built to keep the cars short and the rooms cool, so there's plenty left in everyone for a long evening in the shade of the house — cheese, tortas, and the Moscatel you carried back.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <h2>Good to know</h2>
+    <p class="sub">For a hot one</p>
+    <ul class="checklist">
+      <li><span><b>Best Tue–Sat.</b> The market and the convent museum both shut on Mondays, and Bacalhôa's gardens close on Sundays — Tuesday to Saturday catches everything.</span></li>
+      <li><span><b>Book the wine visits.</b> Both Bacalhôa and José Maria da Fonseca are by appointment in set time slots — a quick call ahead saves a wait. Kids under 10 are free at Fonseca.</span></li>
+      <li><span><b>Chase the shade.</b> Coolest rooms in the morning (market, museum), a long indoor lunch through the worst of the sun, cellars and hedged gardens for the afternoon, pool by five.</span></li>
+      <li><span><b>Cars.</b> Park once on Setúbal's waterfront; the two Azeitão stops are a few minutes apart and a few minutes from the house. Water bottles, hats, and don't leave bags visible.</span></li>
+    </ul>
+    <p class="colophon">The times are a loose spine, not a schedule. On a hot day the trick is simple — keep the driving short, the rooms cool, and the pool close.</p>
+  </footer>
+
+  <p class="alsosee">Also on this trip → <a href="arrabida.html">Castle, Coast &amp; Cheese (Arrábida)</a> &nbsp;·&nbsp; <a href="lisbon-day-1.html">Lisbon, Day 1</a> &nbsp;·&nbsp; <a href="lisbon-day-2.html">Day 2</a></p>
+
+</div>
+
+<div class="trip-map-shell" aria-label="Map of the day's stops">
+  <button class="map-toggle" id="mapToggle" aria-expanded="true">Hide map</button>
+  <div class="map-now"><span class="i">Now</span><span id="mapNowLabel">—</span></div>
+  <div id="trip-map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="static/itinerary-map.js"></script>
+</body>
+</html>
