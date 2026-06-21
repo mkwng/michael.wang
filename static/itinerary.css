@@ -173,6 +173,11 @@ figure{margin:2px 0 6px;}
 .where .name .pill.clay{background:var(--clay);}
 .where .desc{font-size:14.5px;color:#46443b;line-height:1.5;}
 .where .desc b{font-weight:600;}
+/* venue items with a small attraction photo */
+.where li.has-thumb{grid-template-columns:62px 1fr;column-gap:13px;align-items:start;}
+.where .thumb{width:62px;height:62px;object-fit:cover;border-radius:7px;
+  border:1px solid var(--line);background:#e9e4d9;}
+.where .vtext{min-width:0;}
 
 /* ---------- logistics note ---------- */
 .note{
