@@ -151,6 +151,11 @@ figure{margin:2px 0 6px;}
 .cap .pin{color:var(--az);font-weight:600;flex:none;}
 .hero{margin:26px 0 8px;}
 
+/* a two-up photo pair on the richer stops */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:2px 0 6px;}
+.duo figure{margin:0;}
+.duo .photo{aspect-ratio:4/3;}
+
 /* ---------- venue list ---------- */
 .where{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--line);}
 .where li{
