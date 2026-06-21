@@ -1,321 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Castle, Coast &amp; Cheese — A Day on the Arrábida</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --paper:#EBE4D6;
-    --card:#FBF9F3;
-    --ink:#1C1B16;
-    --muted:#6E6857;
-    --line:#D6CDB9;
-    --azulejo:#1E3D7B;
-    --azulejo-bright:#2E5BA8;
-    --sea:#2C6E60;
-    --rail:46px;
-  }
-  *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:"Archivo",system-ui,sans-serif;
-    font-size:16.5px;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{
-    max-width:760px;
-    margin:0 auto;
-    padding:0 22px 72px;
-  }
-
-  /* ---------- masthead ---------- */
-  .masthead{padding:54px 0 26px;}
-  .eyebrow{
-    font-family:"Archivo",sans-serif;
-    font-weight:600;
-    font-size:11.5px;
-    letter-spacing:.26em;
-    text-transform:uppercase;
-    color:var(--azulejo);
-    margin:0 0 18px;
-  }
-  .title{
-    font-family:"Spectral",serif;
-    font-weight:600;
-    font-size:clamp(40px,9vw,68px);
-    line-height:1.02;
-    letter-spacing:-.012em;
-    margin:0 0 18px;
-  }
-  .title .amp{font-style:italic;font-weight:500;color:var(--azulejo);}
-  .dek{
-    font-family:"Spectral",serif;
-    font-size:clamp(17px,3.4vw,20px);
-    line-height:1.45;
-    color:#3a382f;
-    max-width:38em;
-    margin:0 0 26px;
-  }
-  .meta{
-    display:flex;flex-wrap:wrap;
-    gap:0 14px;align-items:baseline;
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:13px 0;
-    font-size:12.5px;
-    letter-spacing:.04em;
-    color:var(--muted);
-    text-transform:uppercase;
-    font-weight:500;
-  }
-  .meta b{color:var(--ink);font-weight:600;}
-  .meta .dot{color:var(--azulejo);}
-
-  /* ---------- hero ---------- */
-  figure{margin:0;}
-  .hero{margin:26px 0 8px;}
-  .photo{
-    position:relative;
-    background:linear-gradient(135deg,#24407a,#2c6e60);
-    border-radius:2px;
-    overflow:hidden;
-    aspect-ratio:16/9;
-  }
-  .photo img{
-    width:100%;height:100%;
-    object-fit:cover;display:block;
-  }
-  .cap{
-    font-size:11.5px;letter-spacing:.04em;
-    color:var(--muted);
-    padding:9px 2px 0;
-    display:flex;gap:8px;
-  }
-  .cap .pin{color:var(--azulejo);font-weight:600;flex:none;}
-
-  /* ---------- at a glance ---------- */
-  .glance{margin:34px 0 8px;}
-  .glance h2{
-    font-family:"Archivo",sans-serif;
-    font-size:11.5px;font-weight:600;letter-spacing:.24em;
-    text-transform:uppercase;color:var(--muted);
-    margin:0 0 14px;
-  }
-  .glance-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    border-top:1px solid var(--line);
-    border-left:1px solid var(--line);
-  }
-  .gcell{
-    border-right:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:13px 14px;
-  }
-  .gcell .t{
-    font-family:"Spectral",serif;
-    font-weight:600;font-size:18px;color:var(--azulejo);
-    line-height:1;
-  }
-  .gcell .l{
-    font-size:12.5px;color:#403e34;margin-top:5px;line-height:1.3;
-  }
-
-  /* ---------- stops (route thread) ---------- */
-  .stops{margin-top:50px;}
-  .stop{
-    position:relative;
-    display:grid;
-    grid-template-columns:var(--rail) 1fr;
-    column-gap:22px;
-  }
-  .rail{position:relative;}
-  /* continuous thread */
-  .rail::before{
-    content:"";
-    position:absolute;
-    left:50%;top:0;bottom:0;
-    width:2px;margin-left:-1px;
-    background:var(--azulejo);
-    opacity:.32;
-  }
-  .stop:first-child .rail::before{top:14px;}
-  .stop:last-child .rail::before{bottom:auto;height:18px;}
-  .node{
-    position:relative;z-index:2;
-    width:var(--rail);height:var(--rail);
-    margin-top:4px;
-    display:flex;align-items:center;justify-content:center;
-    font-family:"Archivo",sans-serif;
-    font-weight:700;font-size:13px;
-    letter-spacing:.02em;
-    color:#fff;
-    background:var(--azulejo);
-    border-radius:50%;
-    box-shadow:0 0 0 5px var(--paper);
-  }
-  .node.pause{
-    background:var(--paper);
-    color:var(--azulejo);
-    border:2px solid var(--azulejo);
-    font-size:15px;
-  }
-  .body{padding-bottom:46px;min-width:0;}
-  .kicker{
-    font-family:"Archivo",sans-serif;
-    font-weight:600;font-size:11px;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--azulejo);
-    margin:7px 0 8px;
-    display:flex;gap:9px;align-items:baseline;
-  }
-  .kicker .time{color:var(--muted);}
-  .stop h3{
-    font-family:"Spectral",serif;
-    font-weight:600;
-    font-size:clamp(24px,5.2vw,30px);
-    line-height:1.08;letter-spacing:-.01em;
-    margin:0 0 14px;
-  }
-  .stop p{margin:0 0 16px;color:#34322b;}
-  .stop .photo{aspect-ratio:3/2;margin:2px 0 6px;}
-
-  /* venue list */
-  .where{
-    list-style:none;margin:18px 0 0;padding:0;
-    border-top:1px solid var(--line);
-  }
-  .where li{
-    padding:13px 0;
-    border-bottom:1px solid var(--line);
-    display:grid;
-    grid-template-columns:auto 1fr;
-    column-gap:13px;
-  }
-  .where .name{
-    font-family:"Archivo",sans-serif;
-    font-weight:600;font-size:15px;
-    grid-column:1 / -1;
-    margin-bottom:3px;
-  }
-  .where .name .tag{
-    font-weight:600;font-size:10px;letter-spacing:.1em;
-    text-transform:uppercase;color:#fff;background:var(--sea);
-    padding:2px 7px;border-radius:2px;margin-left:8px;
-    vertical-align:1px;
-  }
-  .where .name .tag.alt{background:var(--azulejo);}
-  .where .desc{
-    grid-column:1 / -1;
-    font-size:14.5px;color:#46443b;line-height:1.5;
-  }
-
-  /* logistics note */
-  .note{
-    margin-top:16px;
-    background:#F3EEE2;
-    border-left:3px solid var(--azulejo);
-    padding:12px 15px;
-    font-size:13.5px;line-height:1.5;color:#3c3a31;
-    border-radius:0 2px 2px 0;
-  }
-  .note b{
-    font-weight:600;text-transform:uppercase;letter-spacing:.1em;
-    font-size:10.5px;color:var(--azulejo);
-    display:block;margin-bottom:3px;
-  }
-
-  /* pause / interstitial */
-  .stop.is-pause .body{padding-bottom:46px;}
-  .stop.is-pause h3{color:var(--sea);}
-  .pausecard{
-    background:transparent;
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:4px 0 18px;
-  }
-
-  /* ---------- footer ---------- */
-  .footer{
-    margin-top:18px;
-    background:var(--ink);
-    color:#E9E3D5;
-    border-radius:3px;
-    padding:30px 26px 28px;
-  }
-  .footer h2{
-    font-family:"Spectral",serif;
-    font-weight:600;font-size:24px;margin:0 0 4px;color:#fff;
-  }
-  .footer .sub{
-    font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
-    color:#9c947f;margin:0 0 20px;
-  }
-  .checklist{list-style:none;margin:0;padding:0;}
-  .checklist li{
-    padding:13px 0;border-top:1px solid #38362d;
-    display:grid;grid-template-columns:auto 1fr;gap:13px;
-    font-size:14.5px;line-height:1.5;color:#D9D2C2;
-  }
-  .checklist li::before{
-    content:"";width:8px;height:8px;margin-top:8px;
-    background:var(--azulejo-bright);border-radius:50%;
-  }
-  .checklist b{color:#fff;font-weight:600;}
-  .colophon{
-    margin-top:24px;
-    font-family:"Spectral",serif;font-style:italic;
-    font-size:15px;line-height:1.5;color:#B7AF9C;
-  }
-
-  a{color:var(--azulejo);text-decoration:none;border-bottom:1px solid rgba(30,61,123,.3);}
-
-  @media (max-width:560px){
-    :root{--rail:36px;}
-    .wrap{padding:0 16px 56px;}
-    .stop{column-gap:15px;}
-    .glance-grid{grid-template-columns:repeat(2,1fr);}
-    .node{font-size:12px;}
-    .meta{font-size:11.5px;}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .masthead,.hero{animation:rise .7s ease both;}
-    .hero{animation-delay:.06s;}
-    @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
-  }
-  @media print{
-    body{background:#fff;}
-    .footer{background:#fff;color:#000;border:1px solid #ccc;}
-    .footer h2,.checklist b{color:#000;}
-    .checklist li{color:#222;}
-  }
-</style>
+<meta name="description" content="A kid-friendly day trip on the Arrábida peninsula — a Moorish fort above Sesimbra, the Serra road, and tiles and cheese in Azeitão, built around a midday pause.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/itinerary.css">
 </head>
 <body>
 <div class="wrap">
 
   <header class="masthead">
-    <p class="eyebrow">A Day on the Arrábida Peninsula</p>
-    <h1 class="title">Castle, Coast <span class="amp">&amp;</span> Cheese</h1>
-    <p class="dek">From a Moorish fort above Sesimbra, over the green spine of the Serra, to tiles and cheese in Azeitão — built around a midday pause so the day can bend to the little ones.</p>
-    <div class="meta">
-      <span><b>Sun 21 June</b></span><span class="dot">·</span>
-      <span>Sesimbra → Azeitão</span><span class="dot">·</span>
-      <span><b>Six families</b>, children 1–7</span>
+    <svg class="mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#1E3D7B" stroke-width="1.2">
+        <g><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,0)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(0,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+      </g>
+    </svg>
+    <div>
+      <p class="eyebrow">A Day on the Arrábida Peninsula</p>
+      <h1 class="title serif">Castle, Coast <span class="amp">&amp;</span> Cheese</h1>
+      <p class="dek">From a Moorish fort above Sesimbra, over the green spine of the Serra, to tiles and cheese in Azeitão — built around a midday pause so the day can bend to the little ones.</p>
+      <div class="meta">
+        <span><b>Sun 21 June</b></span><span class="dot">·</span>
+        <span>Sesimbra → Azeitão</span><span class="dot">·</span>
+        <span><b>Six families</b>, children 1–7</span>
+      </div>
     </div>
   </header>
-
-  <figure class="hero">
-    <div class="photo"><img src="static/arrabida/castelo.jpg" alt="Stone walls of the Castelo de Sesimbra above the sea" loading="eager" onerror="this.style.display='none'"></div>
-    <figcaption class="cap"><span class="pin">↑</span><span>Castelo de Sesimbra — the 9th-century walls where the day begins.</span></figcaption>
-  </figure>
 
   <section class="glance">
     <h2>At a glance</h2>
@@ -329,6 +46,11 @@
     </div>
   </section>
 
+  <figure class="hero">
+    <div class="photo"><img src="static/arrabida/castelo.jpg" alt="Stone walls of the Castelo de Sesimbra above the sea" loading="eager"></div>
+    <figcaption class="cap"><span class="pin">↑</span><span>Castelo de Sesimbra — the 9th-century walls where the day begins.</span></figcaption>
+  </figure>
+
   <div class="stops">
 
     <!-- 01 -->
@@ -339,12 +61,12 @@
         <h3>Pastry, then the ramparts</h3>
         <p>Coffee and something from the oven before the heat builds — then up to the fort to let everyone run. Free, unstructured, open walls high over the bay. Park outside and walk in; give it about an hour.</p>
         <figure>
-          <div class="photo"><img src="static/arrabida/pastry.jpg" alt="Portuguese pastries" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="photo"><img src="static/arrabida/pastry.jpg" alt="Portuguese pastries" loading="lazy"></div>
           <figcaption class="cap"><span class="pin">◷</span><span>Padaria do Gá — pastéis with a faint orange-blossom note.</span></figcaption>
         </figure>
         <ul class="where">
           <li><div class="name">Padaria do Gá</div><div class="desc">The town's best pastel de nata — tucked round a corner with no sign. Or <b>Natas D'Ouro</b> for a rotating cast of flavours the kids can pick from.</div></li>
-          <li><div class="name">Castelo de Sesimbra <span class="tag alt">Free</span></div><div class="desc">9th-century Moorish walls and towers above the harbour. Mostly unstructured — ramparts to roam.</div></li>
+          <li><div class="name">Castelo de Sesimbra <span class="pill alt">Free</span></div><div class="desc">9th-century Moorish walls and towers above the harbour. Mostly unstructured — ramparts to roam.</div></li>
         </ul>
         <div class="note"><b>With the little ones</b>Open stone with unguarded edges — carriers or a firm hand for the 1, 3 and 4-year-olds.</div>
       </div>
@@ -358,12 +80,12 @@
         <h3>Lunch on the harbour</h3>
         <p>Down to the fishing port for whatever came off the boats this morning — the row of seafood places below the castle, with a promenade and ice-cream stands for after.</p>
         <figure>
-          <div class="photo"><img src="static/arrabida/harbour.jpg" alt="Beachfront seafood restaurant in Sesimbra" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="photo"><img src="static/arrabida/harbour.jpg" alt="Beachfront seafood restaurant in Sesimbra" loading="lazy"></div>
           <figcaption class="cap"><span class="pin">◷</span><span>Costa Nossa — a patio over the water, the day's catch.</span></figcaption>
         </figure>
         <ul class="where">
-          <li><div class="name">Costa Nossa <span class="tag">Polished</span></div><div class="desc">Patio over the water, the day's catch, attentive service (priced for the view).</div></li>
-          <li><div class="name">Lobo do Mar <span class="tag alt">Classic</span></div><div class="desc">Walk past the ice counter, point at your fish, eat it off the grill across from the marina.</div></li>
+          <li><div class="name">Costa Nossa <span class="pill">Polished</span></div><div class="desc">Patio over the water, the day's catch, attentive service (priced for the view).</div></li>
+          <li><div class="name">Lobo do Mar <span class="pill alt">Classic</span></div><div class="desc">Walk past the ice counter, point at your fish, eat it off the grill across from the marina.</div></li>
         </ul>
         <div class="note"><b>Seating the group</b>A walk-in table for twenty-odd on a summer Sunday is a stretch — call ahead, or plan to split across two neighbouring places. Skip Rodinhas with the group: no bookings, long queue.</div>
       </div>
@@ -389,7 +111,7 @@
         <h3>Over the Serra da Arrábida</h3>
         <p>The N379-1 climbs into the limestone ridge and drops toward impossibly clear water — one of the prettiest stretches of road in the country.</p>
         <figure>
-          <div class="photo"><img src="static/arrabida/arrabida-road.jpg" alt="Turquoise water and cliffs at Portinho da Arrábida" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="photo"><img src="static/arrabida/arrabida-road.jpg" alt="Turquoise water and cliffs at Portinho da Arrábida" loading="lazy"></div>
           <figcaption class="cap"><span class="pin">◷</span><span>Miradouro do Portinho da Arrábida — the view over the bay.</span></figcaption>
         </figure>
         <ul class="where">
@@ -406,13 +128,13 @@
         <h3>Tiles &amp; cheese</h3>
         <p>Into the village that gives the cheese its name, with a craft stop on the way to dinner — and the two things Azeitão is known for to carry home.</p>
         <figure>
-          <div class="photo"><img src="static/arrabida/tiles.jpg" alt="Hand-painted Portuguese azulejo tiles" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="photo"><img src="static/arrabida/tiles.jpg" alt="Hand-painted Portuguese azulejo tiles" loading="lazy"></div>
           <figcaption class="cap"><span class="pin">◷</span><span>Leiveira Azulejos de Azeitão — paint your own tile.</span></figcaption>
         </figure>
         <ul class="where">
-          <li><div class="name">Leiveira Azulejos de Azeitão <span class="tag">Hands-on</span></div><div class="desc">A working hand-painted tile studio — about €13 to paint your own (ready the next day). Best for the 4, 6 and 7-year-olds, with a couple of adults on littles duty.</div></li>
+          <li><div class="name">Leiveira Azulejos de Azeitão <span class="pill">Hands-on</span></div><div class="desc">A working hand-painted tile studio — about €13 to paint your own (ready the next day). Best for the 4, 6 and 7-year-olds, with a couple of adults on littles duty.</div></li>
           <li><div class="name">Queijo de Azeitão &amp; tortas</div><div class="desc">Pick up the soft sheep's-milk cheese — scoop the top, spoon it onto bread — and the rolled tortas to take back.</div></li>
-          <li><div class="name">José Maria da Fonseca / Bacalhôa <span class="tag alt">Adults</span></div><div class="desc">For a splinter group: a cellar tour and tasting at either historic house.</div></li>
+          <li><div class="name">José Maria da Fonseca / Bacalhôa <span class="pill alt">Adults</span></div><div class="desc">For a splinter group: a cellar tour and tasting at either historic house.</div></li>
         </ul>
         <div class="note"><b>Book ahead</b>Reserve the tile workshop as a group — it runs better with notice.</div>
       </div>
@@ -426,11 +148,11 @@
         <h3>Dinner at Casa das Tortas</h3>
         <p>The heart of the village, on Praça da República — where locals gather and the courtyard grill runs late.</p>
         <figure>
-          <div class="photo"><img src="static/arrabida/dinner.jpg" alt="Casa das Tortas restaurant, Azeitão" loading="lazy" onerror="this.style.display='none'"></div>
+          <div class="photo"><img src="static/arrabida/dinner.jpg" alt="Casa das Tortas restaurant, Azeitão" loading="lazy"></div>
           <figcaption class="cap"><span class="pin">◷</span><span>Casa das Tortas — your reservation, courtyard grill and all.</span></figcaption>
         </figure>
         <ul class="where">
-          <li><div class="name">Casa das Tortas <span class="tag">Reserved</span></div><div class="desc">Black pork, fish off the courtyard BBQ, local wine, and — of course — the cheese and tortas.</div></li>
+          <li><div class="name">Casa das Tortas <span class="pill">Reserved</span></div><div class="desc">Black pork, fish off the courtyard BBQ, local wine, and — of course — the cheese and tortas.</div></li>
         </ul>
       </div>
     </section>
@@ -448,6 +170,8 @@
     </ul>
     <p class="colophon">The times are a loose spine, not a schedule. The pause in the middle is the whole trick — it lets the day bend around naps and still land everyone at the same table by dinner.</p>
   </footer>
+
+  <p class="alsosee">Also on this trip → <a href="lisbon.html">Two Days in Lisbon</a></p>
 
 </div>
 </body>
