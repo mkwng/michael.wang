@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Castle, Coast &amp; Cheese — A Day on the Arrábida</title>
 <meta name="description" content="A kid-friendly day trip on the Arrábida peninsula — a Moorish fort above Sesimbra, the Serra road, and tiles and cheese in Azeitão, built around a midday pause.">
 <!-- Social / link previews (iMessage, Slack, Twitter, etc.) -->
@@ -23,9 +23,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="static/itinerary.css">
+<link rel="stylesheet" href="static/itinerary-map.css">
 </head>
-<body>
+<body class="has-map">
 <div class="wrap">
 
   <header class="masthead">
@@ -49,6 +51,12 @@
     </div>
   </header>
 
+  <nav class="daynav">
+    <a href="lisbon-day-1.html">Lisbon · Day 1</a>
+    <a href="lisbon-day-2.html">Lisbon · Day 2</a>
+    <a href="arrabida.html" class="on" aria-current="page">Arrábida</a>
+  </nav>
+
   <section class="glance">
     <h2>At a glance</h2>
     <div class="glance-grid">
@@ -69,7 +77,7 @@
   <div class="stops">
 
     <!-- 01 -->
-    <section class="stop">
+    <section class="stop" data-lat="38.4481" data-lng="-9.1067" data-label="Castelo de Sesimbra" data-pin="1">
       <div class="rail"><div class="node">01</div></div>
       <div class="body">
         <div class="kicker">Morning <span class="time">· 09:00</span></div>
@@ -88,7 +96,7 @@
     </section>
 
     <!-- 02 -->
-    <section class="stop">
+    <section class="stop" data-lat="38.4419" data-lng="-9.1025" data-label="Sesimbra harbour" data-pin="2">
       <div class="rail"><div class="node">02</div></div>
       <div class="body">
         <div class="kicker">Midday <span class="time">· 12:30</span></div>
@@ -119,7 +127,7 @@
     </section>
 
     <!-- 04 -->
-    <section class="stop">
+    <section class="stop" data-lat="38.4793" data-lng="-8.9876" data-label="Portinho da Arrábida" data-pin="4">
       <div class="rail"><div class="node">04</div></div>
       <div class="body">
         <div class="kicker">Late afternoon <span class="time">· 16:30</span></div>
@@ -142,7 +150,7 @@
     </section>
 
     <!-- 05 -->
-    <section class="stop">
+    <section class="stop" data-lat="38.5128" data-lng="-9.0136" data-label="Azeitão" data-pin="5">
       <div class="rail"><div class="node">05</div></div>
       <div class="body">
         <div class="kicker">Azeitão <span class="time">· 17:15</span></div>
@@ -168,7 +176,7 @@
     </section>
 
     <!-- 06 -->
-    <section class="stop">
+    <section class="stop" data-lat="38.5118" data-lng="-9.0148" data-label="Casa das Tortas" data-pin="6">
       <div class="rail"><div class="node">06</div></div>
       <div class="body">
         <div class="kicker">Evening <span class="time">· 19:30</span></div>
@@ -198,8 +206,17 @@
     <p class="colophon">The times are a loose spine, not a schedule. The pause in the middle is the whole trick — it lets the day bend around naps and still land everyone at the same table by dinner.</p>
   </footer>
 
-  <p class="alsosee">Also on this trip → <a href="lisbon.html">Two Days in Lisbon</a></p>
+  <p class="alsosee">Also on this trip → <a href="lisbon-day-1.html">Lisbon, Day 1</a> &nbsp;·&nbsp; <a href="lisbon-day-2.html">Day 2</a></p>
 
 </div>
+
+<div class="trip-map-shell" aria-label="Map of the day's stops">
+  <button class="map-toggle" id="mapToggle" aria-expanded="true">Hide map</button>
+  <div class="map-now"><span class="i">Now</span><span id="mapNowLabel">—</span></div>
+  <div id="trip-map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="static/itinerary-map.js"></script>
 </body>
 </html>
