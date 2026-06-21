@@ -14,9 +14,9 @@
 .daynav a.on{background:var(--az);color:#fff;border-color:var(--az);}
 
 /* ---- bottom-anchored map shell ---- */
-body.has-map{--map-h:40vh;}
-@media (max-width:560px){body.has-map{--map-h:44vh;}}
-body.has-map .wrap{padding-bottom:calc(var(--map-h) + 60px);}
+body.has-map{--map-h:30vh;}
+@media (max-width:560px){body.has-map{--map-h:34vh;}}
+body.has-map .wrap{padding-bottom:calc(var(--map-h) + 56px);}
 body.has-map.map-collapsed{--map-h:0px;}
 
 .trip-map-shell{

@@ -32,8 +32,10 @@
       });
     }
 
+    var nums = stops.map(function (s, i) { return s.dataset.pin || (i + 1); });
+
     var markers = coords.map(function (c, i) {
-      var m = L.marker(c, { icon: icon(i + 1, false), keyboard: false }).addTo(map);
+      var m = L.marker(c, { icon: icon(nums[i], false), keyboard: false }).addTo(map);
       m.on('click', function () {
         stops[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
@@ -52,7 +54,7 @@
     function setActive(i) {
       if (i < 0 || i >= markers.length || i === active) return;
       active = i;
-      markers.forEach(function (m, j) { m.setIcon(icon(j + 1, j === i)); });
+      markers.forEach(function (m, j) { m.setIcon(icon(nums[j], j === i)); });
       if (nowLabel) nowLabel.textContent = stops[i].dataset.label || ('Stop ' + (i + 1));
       if (userMoved) map.flyTo(coords[i], 15, { duration: 0.7 });
     }
