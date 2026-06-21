@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two Days in Lisbon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F3EE; --ink:#20201D; --muted:#6B675E;
+  --az:#234E76; --az-deep:#1A3A58; --az-tint:#E7ECF2;
+  --line:#E2DDD2; --clay:#A8703C;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px; margin:0 auto; padding:34px 22px 60px;}
+.serif{font-family:'IBM Plex Serif',Georgia,serif;}
+.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;}
+
+/* Masthead */
+.masthead{display:flex; gap:16px; align-items:flex-start; padding-bottom:18px;}
+.mark{flex:none; width:50px; height:50px; margin-top:4px;}
+.eyebrow{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--az);}
+h1.title{font-family:'IBM Plex Serif',serif; font-weight:600; font-size:38px;
+  line-height:1.05; margin:6px 0 0;}
+.sub{color:var(--muted); margin:10px 0 0; font-size:15.5px; max-width:56ch;}
+.howto{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--az);
+  background:var(--az-tint); border-radius:6px; padding:9px 12px; margin-top:14px;
+  letter-spacing:.01em;}
+.frieze{height:14px; margin:16px 0 0;
+  background-image:repeating-linear-gradient(90deg, var(--az) 0 9px, transparent 9px 28px);
+  -webkit-mask:repeating-linear-gradient(90deg,#000 0 9px,transparent 9px 28px); opacity:.5;}
+.frieze2{height:0; border-top:1px solid var(--line); margin:8px 0 0;}
+
+/* Day header */
+.day{margin-top:38px;}
+.day-kicker{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--az);}
+.day-title{font-family:'IBM Plex Serif',serif; font-weight:600; font-size:26px; margin:3px 0 0;}
+.day-meta{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--muted);
+  margin-top:6px;}
+.day-rule{height:2px; background:var(--az); opacity:.18; margin:12px 0 0;}
+
+/* Chunk */
+.chunk{padding:26px 0; border-bottom:1px solid var(--line);}
+.chunk:last-child{border-bottom:none;}
+.chead{display:flex; gap:14px; align-items:baseline;}
+.cnum{font-family:'IBM Plex Serif',serif; font-weight:600; font-size:30px; color:var(--az);
+  line-height:1; flex:none; width:34px;}
+.cmove{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:#9A958A;}
+.area{font-family:'IBM Plex Sans',sans-serif; font-weight:700; font-size:21px; margin:1px 0 0;
+  letter-spacing:-.01em;}
+.theme{color:var(--muted); font-size:14.5px; margin-top:1px;}
+.tag{font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--clay); border:1px solid #DCC0A0; border-radius:3px;
+  padding:2px 6px; margin-left:9px; vertical-align:3px;}
+
+figure{margin:18px 0 4px;}
+figure img{width:100%; height:auto; display:block; border-radius:10px; border:1px solid var(--line);
+  background:#eee;}
+figcaption{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted);
+  margin-top:7px; letter-spacing:.02em;}
+
+.overall{margin:14px 0 0; font-size:15.5px;}
+
+.meta{margin:16px 0 4px; border-left:2.5px solid var(--az); background:var(--az-tint);
+  border-radius:0 6px 6px 0; padding:11px 14px;}
+.meta-row{display:flex; gap:10px; font-size:14px; margin:3px 0;}
+.meta-row:first-child{margin-top:0;}
+.ml{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--az); font-weight:500; flex:none; width:64px; padding-top:3px;}
+.mv{color:#2C3E54;}
+
+.venues{list-style:none; margin:16px 0 0; padding:0;}
+.venues li{position:relative; padding-left:16px; margin:0 0 8px; font-size:15px;}
+.venues li::before{content:""; position:absolute; left:0; top:9px; width:5px; height:5px;
+  background:var(--az); transform:rotate(45deg);}
+.venues b{font-weight:600;}
+.vnote{color:var(--muted);}
+
+/* Colophon */
+.colophon{margin-top:34px; padding-top:18px; border-top:2px solid var(--az);
+  border-top-color:rgba(35,78,118,.18);}
+.colophon h4{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--az); margin:0 0 10px;}
+.colophon p{font-size:14px; color:var(--muted); margin:0 0 9px;}
+.colophon b{color:var(--ink); font-weight:600;}
+@media (max-width:520px){
+  h1.title{font-size:30px;} .day-title{font-size:22px;} .area{font-size:19px;}
+  .wrap{padding:26px 16px 48px;}
+}
+</style></head>
+<body><div class="wrap">
+
+<div class="masthead">
+  <svg class="mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="#234E76" stroke-width="1.2">
+      <g>
+        <circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/>
+        <circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/>
+        <circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/>
+      </g>
+      <g transform="translate(40,0)">
+        <circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/>
+        <circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/>
+        <circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/>
+      </g>
+      <g transform="translate(0,40)">
+        <circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/>
+        <circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/>
+        <circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/>
+      </g>
+      <g transform="translate(40,40)">
+        <circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/>
+        <circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/>
+        <circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/>
+      </g>
+    </g>
+  </svg>
+  <div>
+    <div class="eyebrow">Itinerary &middot; June 2026 &middot; Three families</div>
+    <h1 class="title">Two Days in Lisbon</h1>
+    <p class="sub">A clean route through the city &mdash; modern waterfront, the medieval old town,
+      the great monuments, and the design quarters. Curated to keep the little ones happy and the
+      driving simple.</p>
+    <div class="howto">Each day moves the cars three times. Park once per zone, explore on foot, repeat.</div>
+  </div>
+</div>
+<div class="frieze"></div>
+
+<!-- ===================== DAY 1 ===================== -->
+<div class="day">
+  <div class="day-kicker">Day 01 &middot; East</div>
+  <div class="day-title serif">Waterfront, Tile &amp; the Old Town</div>
+  <div class="day-meta">3 car moves &nbsp;&middot;&nbsp; in over the Vasco da Gama bridge &nbsp;&middot;&nbsp; best Tuesday&ndash;Saturday</div>
+  <div class="day-rule"></div>
+
+  <div class="chunk">
+    <div class="chead"><span class="cnum serif">1</span>
+      <div><div class="cmove">Car move 1</div>
+        <div class="area">Parque das Na&ccedil;&otilde;es</div>
+        <div class="theme">the aquarium morning</div></div></div>
+    <figure><img src="static/lisbon/oceanario.jpg" alt="Oceanário de Lisboa central tank">
+      <figcaption>Ocean&aacute;rio de Lisboa &mdash; the vast central tank</figcaption></figure>
+    <p class="overall">A sleek modern district on the river, built for Expo &rsquo;98: wide promenades,
+      public art, splash fountains, and the best attraction in the city for kids. The easiest,
+      lowest-stress way to begin.</p>
+    <div class="meta">
+      <div class="meta-row"><span class="ml">Park</span><span class="mv">Centro Vasco da Gama mall garage &mdash; underground, huge, ~&euro;1&ndash;2/hr, never full first thing. Five-minute walk to the water.</span></div>
+      <div class="meta-row"><span class="ml">Timing</span><span class="mv">Arrive ~9:15 for coffee &middot; aquarium first slot 10:00 &middot; cable car + lunch to ~1:30.</span></div>
+    </div>
+    <ul class="venues">
+      <li><b>Morning coffee &mdash; Zagora Brunch</b> <span class="vnote">(opens 8:30, closed Tue) or <b>Nina</b> (opens 9:00): proper specialty coffee right by the cable car.</span></li>
+      <li><b>Ocean&aacute;rio de Lisboa</b> <span class="vnote">&mdash; book the first time slot; ~2 hrs, built around one enormous central tank.</span></li>
+      <li><b>Telecabine</b> <span class="vnote">&mdash; a short riverside cable-car ride (opens 11). A hit with the kids.</span></li>
+      <li><b>Lunch</b> <span class="vnote">on the waterfront before moving the cars.</span></li>
+    </ul>
+  </div>
+
+  <div class="chunk">
+    <div class="chead"><span class="cnum serif">2</span>
+      <div><div class="cmove">Car move 2</div>
+        <div class="area">Museu Nacional do Azulejo<span class="tag">Optional</span></div>
+        <div class="theme">Portuguese tile</div></div></div>
+    <figure><img src="static/lisbon/azulejo.jpg" alt="National Tile Museum interior">
+      <figcaption>Museu Nacional do Azulejo &mdash; five centuries of tilework</figcaption></figure>
+    <p class="overall">Portugal&rsquo;s signature blue-and-white tilework, housed in a former convent and
+      ending in a huge tiled panorama of pre-earthquake Lisbon. Calm, uncrowded, quietly beautiful.
+      This is the stop to drop if the group wants a slower day.</p>
+    <div class="meta">
+      <div class="meta-row"><span class="ml">Park</span><span class="mv">Easy street parking on Rua Madre de Deus, well off the tourist core; pay via the EMEL <i>ePark</i> app.</span></div>
+      <div class="meta-row"><span class="ml">Timing</span><span class="mv">A quick stop, ~1 hr, early afternoon.</span></div>
+    </div>
+    <ul class="venues">
+      <li><b>The permanent collection</b> <span class="vnote">&mdash; and the <i>Grande Vista de Lisboa</i>, a 75-foot tiled cityscape.</span></li>
+      <li><b>Garden caf&eacute;</b> <span class="vnote">&mdash; a shady reset before Alfama.</span></li>
+    </ul>
+  </div>
+
+  <div class="chunk">
+    <div class="chead"><span class="cnum serif">3</span>
+      <div><div class="cmove">Car move 3</div>
+        <div class="area">Alfama</div>
+        <div class="theme">the medieval old town</div></div></div>
+    <figure><img src="static/lisbon/castelo.jpg" alt="Castelo de São Jorge ramparts">
+      <figcaption>Castelo de S&atilde;o Jorge &mdash; ramparts over the old town</figcaption></figure>
+    <p class="overall">Lisbon&rsquo;s oldest quarter: a steep maze of tiled houses, washing lines, viewpoints
+      and gelato. Touristy around the castle and the main terraces, but one lane off it&rsquo;s still a
+      living neighborhood. Best in the late afternoon, once the bus crowds thin.</p>
+    <div class="meta">
+      <div class="meta-row"><span class="ml">Park</span><span class="mv">Don&rsquo;t drive in &mdash; the lanes are scooter-width. Leave the cars at the Ch&atilde;o do Loureiro garage by the S&eacute; cathedral (it has a lift toward the castle + a rooftop view) and walk up.</span></div>
+      <div class="meta-row"><span class="ml">Timing</span><span class="mv">~3:30 onward &middot; golden hour at the viewpoints &middot; early dinner.</span></div>
+    </div>
+    <ul class="venues">
+      <li><b>Miradouro das Portas do Sol</b> <span class="vnote">+ its garden kiosk &mdash; rooftops to the river; juice for the kids, a drink for you.</span></li>
+      <li><b>Castelo de S&atilde;o Jorge</b> <span class="vnote">(optional) &mdash; ramparts, peacocks, the widest view in the city. A climb; skip if the kids are flagging.</span></li>
+      <li><b>Corti&ccedil;o &amp; Netos</b> <span class="vnote">&mdash; fourth-generation azulejo dealers selling discontinued tiles; they ship.</span></li>
+      <li><b>Gelado de Alfama / Amorino</b> <span class="vnote">&mdash; the gelato stops.</span></li>
+      <li><b>Dinner &mdash; Prado</b> <span class="vnote">(Baixa, farm-to-table, walkable) or <b>Cervejaria Ramiro</b> (loud, fast, legendary seafood &mdash; surprisingly kid-proof).</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===================== DAY 2 ===================== -->
+<div class="day">
+  <div class="day-kicker">Day 02 &middot; West</div>
+  <div class="day-title serif">Monuments, Makers &amp; Downtown</div>
+  <div class="day-meta">3 car moves &nbsp;&middot;&nbsp; in over the 25 de Abril bridge &nbsp;&middot;&nbsp; not Monday (Jer&oacute;nimos closed)</div>
+  <div class="day-rule"></div>
+
+  <div class="chunk">
+    <div class="chead"><span class="cnum serif">1</span>
+      <div><div class="cmove">Car move 1</div>
+        <div class="area">Bel&eacute;m</div>
+        <div class="theme">the monuments &mdash; kept light for little ones</div></div></div>
+    <figure><img src="static/lisbon/jeronimos.jpg" alt="Mosteiro dos Jerónimos">
+      <figcaption>Mosteiro dos Jer&oacute;nimos &mdash; the Manueline monastery</figcaption></figure>
+    <p class="overall">Postcard Lisbon on the river: the great monastery, striking modern architecture,
+      gardens, and the original custard tart. We&rsquo;ve kept this to one indoor stop and plenty of open
+      space so the 3- and 4-year-olds don&rsquo;t burn out.</p>
+    <div class="meta">
+      <div class="meta-row"><span class="ml">Park</span><span class="mv">CCB underground garage (Centro Cultural de Bel&eacute;m). Surface lots fill by mid-morning, so the garage is the safe bet &mdash; arrive ~9:30.</span></div>
+      <div class="meta-row"><span class="ml">Timing</span><span class="mv">Coffee 8:30 &middot; monastery at opening 9:30 &middot; outdoor MAAT + gardens + tarts to ~noon.</span></div>
+    </div>
+    <ul class="venues">
+      <li><b>Morning coffee &mdash; The Folks Bel&eacute;m</b> <span class="vnote">(opens 8:30): a real roastery two minutes from the monastery.</span></li>
+      <li><b>Mosteiro dos Jer&oacute;nimos</b> <span class="vnote">&mdash; go to the cloister at opening; it&rsquo;s a single open courtyard loop (~30 min) the kids can move around in. The one indoor stop.</span></li>
+      <li><b>MAAT</b> <span class="vnote">&mdash; seen from the outside: walk up and over the white wave-roof, then the riverside path. No second museum interior.</span></li>
+      <li><b>Gardens &amp; riverfront</b> <span class="vnote">&mdash; room for the kids to run. (Save your nata for Manteigaria later, or brave the Past&eacute;is de Bel&eacute;m line if you must.)</span></li>
+    </ul>
+  </div>
+
+  <div class="chunk">
+    <div class="chead"><span class="cnum serif">2</span>
+      <div><div class="cmove">Car move 2</div>
+        <div class="area">LX Factory</div>
+        <div class="theme">the creative-industrial lunch</div></div></div>
+    <figure><img src="static/lisbon/lxfactory.jpg" alt="LX Factory">
+      <figcaption>LX Factory &mdash; design shops and murals under the bridge</figcaption></figure>
+    <p class="overall">A 19th-century factory complex under the big bridge, reborn as a village of design
+      shops, murals, caf&eacute;s and a famous bookstore. Genuinely cool, easy with kids (open courtyards,
+      room to roam), and the midday hinge between the monuments and downtown.</p>
+    <div class="meta">
+      <div class="meta-row"><span class="ml">Park</span><span class="mv">The on-site lot fills, so use a nearby Alc&acirc;ntara garage and walk in.</span></div>
+      <div class="meta-row"><span class="ml">Timing</span><span class="mv">~12:15&ndash;2:15 over lunch.</span></div>
+    </div>
+    <ul class="venues">
+      <li><b>Lunch in the courtyard</b> <span class="vnote">&mdash; lots of options; kids wander between them.</span></li>
+      <li><b>Ler Devagar</b> <span class="vnote">&mdash; a cathedral-scale bookshop with a flying-bicycle sculpture suspended over the shelves.</span></li>
+      <li><b>Landeau</b> <span class="vnote">&mdash; the legendary chocolate cake (the only thing they make).</span></li>
+    </ul>
+  </div>
+
+  <div class="chunk">
+    <div class="chead"><span class="cnum serif">3</span>
+      <div><div class="cmove">Car move 3</div>
+        <div class="area">Chiado &middot; Bairro Alto &middot; Pr&iacute;ncipe Real</div>
+        <div class="theme">downtown</div></div></div>
+    <figure><img src="static/lisbon/saoroque.jpg" alt="Igreja de São Roque gilded interior">
+      <figcaption>Igreja de S&atilde;o Roque &mdash; the gilded interior</figcaption></figure>
+    <p class="overall">Lisbon&rsquo;s elegant heart: shopping streets, historic caf&eacute;s, a gilded church, craft
+      shops and garden squares, all walkable uphill from one garage. The afternoon for browsing,
+      coffee, and a sunset viewpoint.</p>
+    <div class="meta">
+      <div class="meta-row"><span class="ml">Park</span><span class="mv">SABA Pra&ccedil;a do Munic&iacute;pio or the Mercado da Ribeira (Cais do Sodr&eacute;) garage. Park once; don&rsquo;t drive Bairro Alto&rsquo;s tiny streets.</span></div>
+      <div class="meta-row"><span class="ml">Timing</span><span class="mv">~2:45 onward &middot; sunset at the miradouro ~6 &middot; dinner after.</span></div>
+    </div>
+    <ul class="venues">
+      <li><b>Afternoon coffee &mdash; F&aacute;brica, Hello Kristof, or Comoba</b> <span class="vnote">&mdash; your pick of the third-wave roasters (Hello Kristof closes 3:45; the others to 5).</span></li>
+      <li><b>Manteigaria</b> <span class="vnote">&mdash; the pastel de nata you skipped in Bel&eacute;m, made fresh and warm.</span></li>
+      <li><b>A Vida Portuguesa &middot; Loja da Burel &middot; Loja das Conservas</b> <span class="vnote">&mdash; genuine Portuguese craft: goods, Serra da Estrela wool, design tins.</span></li>
+      <li><b>Livraria Bertrand &middot; Igreja de S&atilde;o Roque</b> <span class="vnote">&mdash; the oldest bookshop in the world, and a plain church with a staggering gilded interior.</span></li>
+      <li><b>Jardim do Pr&iacute;ncipe Real</b> <span class="vnote">&mdash; playground and a giant cedar for the kids; EmbaiXada palace-mall on the square.</span></li>
+      <li><b>Miradouro de S&atilde;o Pedro de Alc&acirc;ntara</b> <span class="vnote">&mdash; the golden-hour view over the castle and Baixa.</span></li>
+      <li><b>Dinner &mdash; Atalho Real</b> <span class="vnote">(Pr&iacute;ncipe Real, steak, family-friendly) or <b>Senhor Uva</b> (Estrela, natural wine, a more grown-up night).</span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="colophon">
+  <h4>Good to know</h4>
+  <p><b>Vehicles &mdash;</b> standard SUVs clear the height bars at every garage here; only a roof box would be tight (CCB Bel&eacute;m is the lowest at 1.90 m). For a 3-car caravan, share the garage address and meet at the entrance.</p>
+  <p><b>Parking &amp; payment &mdash;</b> EMEL <i>ePark</i> and <i>Telpark</i> handle street parking; most garages take tap-to-pay. Don&rsquo;t leave bags visible in the cars.</p>
+  <p><b>From the south &mdash;</b> if central parking on Day 2 feels stressful, park at Pragal (Almada) and take the Fertagus train across the bridge &mdash; a park-and-ride that skips downtown driving entirely.</p>
+</div>
+
+</div></body></html>
