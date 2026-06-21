@@ -1,0 +1,73 @@
+/* ============================================================
+   Sticky, scroll-following trip map (Leaflet + OpenStreetMap)
+   Loaded only on the per-day itinerary pages.
+   ============================================================ */
+
+/* ---- day switcher ---- */
+.daynav{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px;}
+.daynav a{
+  font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;text-decoration:none;border:1px solid var(--line);
+  border-radius:6px;padding:8px 12px;color:var(--muted);background:var(--card);
+  line-height:1;
+}
+.daynav a.on{background:var(--az);color:#fff;border-color:var(--az);}
+
+/* ---- bottom-anchored map shell ---- */
+body.has-map{--map-h:40vh;}
+@media (max-width:560px){body.has-map{--map-h:44vh;}}
+body.has-map .wrap{padding-bottom:calc(var(--map-h) + 60px);}
+body.has-map.map-collapsed{--map-h:0px;}
+
+.trip-map-shell{
+  position:fixed;left:0;right:0;bottom:0;height:var(--map-h);
+  z-index:800;background:#dfe5ec;
+  border-top:2px solid var(--az);
+  box-shadow:0 -10px 30px rgba(20,30,55,.18);
+  transition:height .3s ease;
+}
+.map-collapsed .trip-map-shell{height:46px;}
+#trip-map{width:100%;height:100%;background:#dfe5ec;}
+.map-collapsed #trip-map{visibility:hidden;}
+
+/* soft top fade so the label reads over the tiles */
+.trip-map-shell::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:48px;z-index:900;
+  background:linear-gradient(rgba(223,229,236,.95),rgba(223,229,236,0));
+  pointer-events:none;
+}
+.map-collapsed .trip-map-shell::before{display:none;}
+
+.map-now{
+  position:absolute;top:0;left:0;z-index:1000;pointer-events:none;
+  display:flex;align-items:center;gap:9px;max-width:62%;
+  padding:11px 14px;
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.02em;color:var(--ink);
+}
+.map-now .i{
+  font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;
+  background:var(--sea);padding:3px 7px;border-radius:3px;flex:none;
+}
+.map-now #mapNowLabel{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+.map-toggle{
+  position:absolute;top:8px;right:10px;z-index:1100;pointer-events:auto;
+  font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--az);border:none;border-radius:6px;
+  padding:10px 13px;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.25);
+  -webkit-tap-highlight-color:transparent;
+}
+.map-toggle:hover{background:var(--az-deep);}
+
+/* numbered marker pins (Leaflet divIcon) */
+.trip-pin{
+  width:32px;height:32px;border-radius:50%;background:var(--az);color:#fff;
+  font:600 14px/32px 'IBM Plex Mono',monospace;text-align:center;
+  box-shadow:0 0 0 3px #fff,0 2px 6px rgba(0,0,0,.35);
+  transition:transform .2s ease,background .2s ease;cursor:pointer;
+}
+.trip-pin.on{background:var(--sea);transform:scale(1.3);}
+
+/* keep Leaflet controls clear of our label, and on-brand */
+.leaflet-control-zoom a{color:var(--az)!important;}
+.leaflet-container{font-family:'IBM Plex Sans',sans-serif;}
