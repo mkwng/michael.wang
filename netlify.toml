@@ -1,4 +1,5 @@
 [build]
-  # No build step — this is a static site
-  command = "echo 'Static site, no build needed'"
-  publish = "."
+  # Static site, no real build — just assemble the servable files into dist/.
+  # Publishing dist/ keeps us compatible with the dashboard's publish dir.
+  command = "rm -rf dist && mkdir -p dist && cp -R _headers static *.html dist/"
+  publish = "dist"
