@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Today — an afternoon in Setúbal, ending at dinner</title>
+<meta name="description" content="Since we made the drive: the covered Setúbal market before it shuts, a choco-frito lunch, the cool old town and its tiled museum, the free hilltop Forte de São Filipe for the view — then the Casa das Tortas dinner in Azeitão.">
+<!-- Social / link previews -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="michael.wang">
+<meta property="og:title" content="Today — an afternoon in Setúbal">
+<meta property="og:description" content="Market, the old town and its tiled museum, a free hilltop fort for the view, then our table in Azeitão for dinner.">
+<meta property="og:url" content="https://michael.wang/today.html">
+<meta property="og:image" content="https://michael.wang/static/og/hot-day.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Today — an afternoon in Setúbal">
+<meta name="twitter:description" content="Market, the old town and its tiled museum, a free hilltop fort for the view, then dinner in Azeitão.">
+<meta name="twitter:image" content="https://michael.wang/static/og/hot-day.jpg">
+<meta name="theme-color" content="#1E3D7B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="static/itinerary.css">
+<link rel="stylesheet" href="static/itinerary-map.css">
+</head>
+<body class="has-map">
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#1E3D7B" stroke-width="1.2">
+        <g><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,0)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(0,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+        <g transform="translate(40,40)"><circle cx="20" cy="6" r="6"/><circle cx="20" cy="34" r="6"/><circle cx="6" cy="20" r="6"/><circle cx="34" cy="20" r="6"/><circle cx="20" cy="20" r="5"/><path d="M20 11 L29 20 L20 29 L11 20 Z"/></g>
+      </g>
+    </svg>
+    <div>
+      <p class="eyebrow">Today &middot; Sun 21 June &middot; Since we made the drive</p>
+      <h1 class="title serif">An Afternoon <span class="amp">in</span> Setúbal</h1>
+      <p class="dek">We're here, so let's make a day of it: the covered market before it shuts, an unhurried lunch, the cool old town and its tiled museum, a free hilltop fort with the best view of the bay — then back west to our table in Azeitão for dinner.</p>
+      <div class="meta">
+        <span class="done-tag">&#10003; Done</span><span class="dot">·</span>
+        <span>park once, walk the centre</span><span class="dot">·</span>
+        <span>ended at <b>Casa das Tortas</b></span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="daynav">
+    <a href="today.html" class="on done" aria-current="page">Today</a>
+    <a href="lisbon-day-1.html">Lisbon · Day 1</a>
+    <a href="lisbon-day-2.html">Lisbon · Day 2</a>
+    <a href="arrabida.html">Arrábida</a>
+  </nav>
+
+  <section class="glance">
+    <h2>The plan — a day in Setúbal, dinner in Azeitão</h2>
+    <div class="glance-grid">
+      <div class="gcell"><div class="t">~12:30</div><div class="l">Market &amp; lunch</div></div>
+      <div class="gcell"><div class="t">~3:00</div><div class="l">Old town &amp; tiled museum</div></div>
+      <div class="gcell"><div class="t">~4:00</div><div class="l">Forte de São Filipe</div></div>
+      <div class="gcell"><div class="t">7:30</div><div class="l">Dinner, Casa das Tortas</div></div>
+    </div>
+  </section>
+
+  <figure class="hero">
+    <div class="photo"><img src="static/setubal/livramento.jpg" alt="Azulejo tile panels inside the Mercado do Livramento, Setúbal" loading="eager"></div>
+    <figcaption class="cap"><span class="pin">↑</span><span>Mercado do Livramento — go straight there; it shuts at two.</span></figcaption>
+  </figure>
+
+  <div class="stops">
+
+    <!-- 01 -->
+    <section class="stop" data-lat="38.5240" data-lng="-8.8937" data-label="Central Setúbal" data-pin="1">
+      <div class="rail"><div class="node">01</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Now → afternoon</span><span class="time">· ~12:30</span></div>
+        <h3>Central Setúbal</h3>
+        <p class="theme">market, lunch, a cool museum &amp; a shaded square</p>
+        <p>The whole centre is walkable from one car park on the waterfront. Hit the market first (it shuts at two), eat the local dish nearby, then drift through the old town in the shade — a tiled convent museum, the main square, an ice cream.</p>
+        <ul class="where">
+          <li><div class="name">Mercado do Livramento <span class="pill alt">Closes ~2pm</span></div><div class="desc">The covered market in azulejo — fish, fruit, cheese, flowers. Cool and free; the one timed thing today, so go straight there.</div></li>
+          <li class="has-thumb"><img class="thumb" src="static/setubal/chocofrito.jpg" alt="A plate of choco frito" loading="lazy"><div class="vtext"><div class="name">Lunch — choco frito <span class="pill">Local dish</span></div><div class="desc">Setúbal's fried cuttlefish, two minutes from the market. <b>Casa Santiago</b> or <b>O Baluarte do Sado</b> on Avenida Luísa Todi.</div></div></li>
+          <li class="has-thumb"><img class="thumb" src="static/setubal/convento.jpg" alt="Twisted Arrábida-marble columns in the Igreja de Jesus" loading="lazy"><div class="vtext"><div class="name">Convento de Jesus / Museu de Setúbal <span class="pill">Cool</span></div><div class="desc">Air-conditioned calm: one of the first Manueline buildings, rope-twist marble columns and a tiled chancel. Small, ~45 min. Closed Mondays.</div></div></li>
+          <li class="has-thumb"><img class="thumb" src="static/setubal/bocage.jpg" alt="Praça de Bocage, the main square" loading="lazy"><div class="vtext"><div class="name">Praça de Bocage</div><div class="desc">The main square — the poet's statue, the town hall, cafés, and shade trees by the fountain to sit under.</div></div></li>
+          <li class="has-thumb"><img class="thumb" src="static/setubal/gelato.jpg" alt="Gelato cones" loading="lazy"><div class="vtext"><div class="name">Ice cream in the square</div><div class="desc">The gelato stop while the kids run the praça.</div></div></li>
+          <li class="has-thumb"><img class="thumb" src="static/setubal/casa-baia.jpg" alt="The tiled Casa da Baía visitor centre" loading="lazy"><div class="vtext"><div class="name">Casa da Baía</div><div class="desc">A tiled old house turned visitor centre on Avenida Luísa Todi — cool patios, regional info, and a counter pouring local Moscatel.</div></div></li>
+        </ul>
+        <div class="note"><b>Park</b>The waterfront lots on Avenida Luísa Todi, a couple of minutes from the market and walkable to all of it.</div>
+        <div class="note"><b>Go now</b>The market is the only timed thing — it closes around 2pm. Everything after it is shaded or indoors.</div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="stop" data-lat="38.5210" data-lng="-8.9050" data-label="Forte de São Filipe" data-pin="2">
+      <div class="rail"><div class="node">02</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Late afternoon</span><span class="time">· ~4:00</span></div>
+        <h3>Forte de São Filipe</h3>
+        <p class="theme">the free hilltop fort &amp; the best view of the bay</p>
+        <p>A short drive up to the 16th-century star fort above the town — free to enter, breezy when the streets are baking, with the widest view of the Sado and Tróia. A tile-lined chapel inside and a café terrace for a long, slow drink. Going up around four leaves the whole evening unhurried.</p>
+        <div class="duo">
+          <figure>
+            <div class="photo"><img src="static/setubal/forte.jpg" alt="Ramparts of the Forte de São Filipe over Setúbal and the Sado" loading="lazy"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>The ramparts — Setúbal, the Sado and Tróia beyond.</span></figcaption>
+          </figure>
+          <figure>
+            <div class="photo"><img src="static/setubal/forte-chapel.jpg" alt="Azulejo-lined chapel inside the fort" loading="lazy"></div>
+            <figcaption class="cap"><span class="pin">◷</span><span>The chapel — lined in Oliveira Bernardes tiles.</span></figcaption>
+          </figure>
+        </div>
+        <ul class="where">
+          <li><div class="name">The ramparts &amp; the view <span class="pill alt">Free</span></div><div class="desc">Walk up to the roof for the panorama; ramparts for the kids to roam (mind the open edges).</div></li>
+          <li><div class="name">The tiled chapel</div><div class="desc">A small chapel completely lined in early-18th-century azulejos.</div></li>
+          <li><div class="name">Café terrace</div><div class="desc">A cold drink in the breeze, no clock on it — then drift back west when you're ready.</div></li>
+        </ul>
+        <div class="note"><b>Heat</b>The one outdoor stop, saved for late when it's cooler and breezier up top. Hats and water.</div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="stop" data-lat="38.5118" data-lng="-9.0148" data-label="Casa das Tortas" data-pin="3">
+      <div class="rail"><div class="node">03</div></div>
+      <div class="body">
+        <div class="kicker"><span class="move">Evening</span><span class="time">· 7:30</span></div>
+        <h3>Dinner at Casa das Tortas</h3>
+        <p class="theme">the reservation, in Azeitão</p>
+        <p>An unhurried drive west — about 25 minutes from the fort — to the table you already booked, on Praça da República in Azeitão. Leaving Setúbal around half five gives you time to settle: change at the house (five minutes away), wander the village, pick up cheese, and arrive easy. Courtyard grill, black pork, local wine, and the cheese and tortas the village is named for.</p>
+        <figure>
+          <div class="photo"><img src="static/arrabida/dinner.jpg" alt="Casa das Tortas restaurant, Azeitão" loading="lazy"></div>
+          <figcaption class="cap"><span class="pin">◷</span><span>Casa das Tortas — your 7:30 table.</span></figcaption>
+        </figure>
+        <ul class="where">
+          <li><div class="name">Casa das Tortas <span class="pill">Reserved · 7:30</span></div><div class="desc">Black pork, fish off the courtyard BBQ, local wine, and — of course — the cheese and tortas.</div></li>
+          <li class="has-thumb"><img class="thumb" src="static/arrabida/azeitao2.jpg" alt="Soft Queijo de Azeitão" loading="lazy"><div class="vtext"><div class="name">Queijo &amp; tortas de Azeitão <span class="pill alt">If you're early</span></div><div class="desc">Grab the soft sheep's cheese and the rolled tortas to take home.</div></div></li>
+        </ul>
+        <div class="note"><b>Booked</b>Reservation at 7:30, but no need to rush — a relaxed ~25-minute drive from the fort, with the house five minutes from the restaurant to change and slow down first.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <h2>Good to know</h2>
+    <p class="sub">Making a day of Setúbal</p>
+    <ul class="checklist">
+      <li><span><b>The market closes ~2pm.</b> It's the only timed thing before dinner — go straight there, then everything after is shaded or indoors.</span></li>
+      <li><span><b>Forte de São Filipe is free.</b> Saved for late afternoon when it's cooler up top; tiled chapel, café terrace, the widest view of the bay.</span></li>
+      <li><span><b>Dinner is booked.</b> Casa das Tortas, Azeitão — 7:30, an easy ~25 minutes west. Drift down from the fort around half five and the drive back stays relaxed, with time to settle in Azeitão first.</span></li>
+      <li><span><b>Park once.</b> The waterfront on Avenida Luísa Todi covers the whole centre on foot; only the fort needs the cars again.</span></li>
+    </ul>
+    <p class="colophon">We came for the market and stayed for the town — a cool museum, a shaded square, a fort in the breeze, and dinner waiting in Azeitão.</p>
+  </footer>
+
+  <p class="alsosee">Also on this trip → <a href="arrabida.html">Castle, Coast &amp; Cheese</a> &nbsp;·&nbsp; <a href="lisbon-day-1.html">Lisbon, Day 1</a> &nbsp;·&nbsp; <a href="lisbon-day-2.html">Day 2</a></p>
+
+</div>
+
+<div class="trip-map-shell" aria-label="Map of today's stops">
+  <button class="map-toggle" id="mapToggle" aria-expanded="true">Hide map</button>
+  <div class="map-now"><span class="i">Now</span><span id="mapNowLabel">—</span></div>
+  <div id="trip-map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="static/itinerary-map.js"></script>
+</body>
+</html>
