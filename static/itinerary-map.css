@@ -12,6 +12,13 @@
   line-height:1;
 }
 .daynav a.on{background:var(--az);color:#fff;border-color:var(--az);}
+/* a completed day */
+.daynav a.done{color:var(--muted);}
+.daynav a.done::before{content:"\2713\00a0";color:var(--sea);font-weight:700;}
+.daynav a.on.done{color:#fff;}
+.daynav a.on.done::before{color:#BFE3D8;}
+/* "done" badge in a masthead meta row */
+.meta .done-tag{color:var(--sea);font-weight:600;}
 
 /* ---- bottom-anchored map shell ---- */
 body.has-map{--map-h:30vh;}
