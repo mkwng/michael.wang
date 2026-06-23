@@ -103,7 +103,7 @@
       </div>
     </section>
 
-    <section class="stop" data-lat="38.7136" data-lng="-9.1426" data-label="Chiado · Bairro Alto">
+    <section class="stop">
       <div class="rail"><div class="node">02</div></div>
       <div class="body">
         <div class="kicker"><span class="move">On foot</span><span class="time">· ~2:45 onward</span></div>
@@ -131,42 +131,42 @@
               <span>a relaxed half-day</span><span class="dot">·</span>
               <span>3 optional detours</span>
             </div>
+            <p class="rnote">The map at the bottom of the screen traces the whole line and lights up each stop as you scroll down the list.</p>
           </div>
-          <div class="route-map" id="routeMap"></div>
           <div class="route-legend">
-            <span class="lg"><span class="dotpin" style="background:#1E3D7B"></span> Start &amp; stops</span>
+            <span class="lg"><span class="dotpin" style="background:#1E3D7B"></span> Walking stop</span>
             <span class="lg"><span class="dotpin" style="background:#A8703C"></span> Optional detour</span>
-            <span class="lg"><span class="dotpin" style="background:#2C6E60"></span> Back to the car</span>
+            <span class="lg"><span class="dotpin" style="background:#2C6E60"></span> Where you are now</span>
           </div>
         </div>
 
         <ul class="where">
           <li class="zone">① Príncipe Real — the top <span class="leg">· taxi up to start</span></li>
-          <li><div class="name">Livraria da Travessa</div><div class="desc">Rua da Escola Politécnica 42–46. A handsome Brazilian bookshop with a café — the calm opening before the square.</div></li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/shop-embaixada.jpg" alt="The EmbaiXada concept gallery courtyard" loading="lazy"><div class="vtext"><div class="name">EmbaiXada &amp; the garden <span class="pill">Kids</span></div><div class="desc">Praça do Príncipe Real 26. A neo-Moorish palace of design boutiques (ISTO's flagship is inside, for sustainable basics); across the road, a garden with a giant cedar and a playground to burn off the littles.</div></div></li>
+          <li data-trail data-lat="38.7166" data-lng="-9.1493" data-label="Livraria da Travessa"><div class="name">Livraria da Travessa</div><div class="desc">Rua da Escola Politécnica 42–46. A handsome Brazilian bookshop with a café — the calm opening before the square.</div></li>
+          <li class="has-thumb" data-trail data-lat="38.7164" data-lng="-9.1478" data-label="EmbaiXada &amp; the Príncipe Real garden"><img class="thumb" src="static/lisbon/shop-embaixada.jpg" alt="The EmbaiXada concept gallery courtyard" loading="lazy"><div class="vtext"><div class="name">EmbaiXada &amp; the garden <span class="pill">Kids</span></div><div class="desc">Praça do Príncipe Real 26. A neo-Moorish palace of design boutiques (ISTO's flagship is inside, for sustainable basics); across the road, a garden with a giant cedar and a playground to burn off the littles.</div></div></li>
 
           <li class="zone">② Down Rua da Misericórdia into Chiado</li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/sp-saopedro.jpg" alt="Miradouro de São Pedro de Alcântara view" loading="lazy"><div class="vtext"><div class="name">Miradouro de São Pedro de Alcântara <span class="pill clay">Optional · view</span></div><div class="desc">A terraced lookout over the castle and Baixa. Dip in now, or save it for the ~6pm golden hour before dinner — your call on the light.</div></div></li>
-          <li><div class="name">Claus Porto</div><div class="desc">Rua da Misericórdia 135. Hand-wrapped soaps and fragrance since 1887, in a jewel-box flagship with a little barber chair upstairs.</div></li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/saoroque.jpg" alt="Igreja de São Roque gilded interior" loading="lazy"><div class="vtext"><div class="name">Igreja de São Roque <span class="pill">Free</span></div><div class="desc">A plain façade hiding one of Europe's most opulent interiors — chapels of gold, marble and lapis, including the Chapel of St John built in Rome. Free, two minutes off Misericórdia.</div></div></li>
-          <li><div class="name">ISTO.</div><div class="desc">Rua Nova da Trindade 22E. The brand's Chiado shop — clean, transparent-priced wardrobe staples made in Portugal.</div></li>
+          <li class="has-thumb" data-trail data-opt data-lat="38.7155" data-lng="-9.1442" data-label="Miradouro de São Pedro de Alcântara"><img class="thumb" src="static/lisbon/sp-saopedro.jpg" alt="Miradouro de São Pedro de Alcântara view" loading="lazy"><div class="vtext"><div class="name">Miradouro de São Pedro de Alcântara <span class="pill clay">Optional · view</span></div><div class="desc">A terraced lookout over the castle and Baixa. Dip in now, or save it for the ~6pm golden hour before dinner — your call on the light.</div></div></li>
+          <li data-trail data-lat="38.7140" data-lng="-9.1440" data-label="Claus Porto"><div class="name">Claus Porto</div><div class="desc">Rua da Misericórdia 135. Hand-wrapped soaps and fragrance since 1887, in a jewel-box flagship with a little barber chair upstairs.</div></li>
+          <li class="has-thumb" data-trail data-lat="38.7137" data-lng="-9.1432" data-label="Igreja de São Roque"><img class="thumb" src="static/lisbon/saoroque.jpg" alt="Igreja de São Roque gilded interior" loading="lazy"><div class="vtext"><div class="name">Igreja de São Roque <span class="pill">Free</span></div><div class="desc">A plain façade hiding one of Europe's most opulent interiors — chapels of gold, marble and lapis, including the Chapel of St John built in Rome. Free, two minutes off Misericórdia.</div></div></li>
+          <li data-trail data-lat="38.7122" data-lng="-9.1428" data-label="ISTO."><div class="name">ISTO.</div><div class="desc">Rua Nova da Trindade 22E. The brand's Chiado shop — clean, transparent-priced wardrobe staples made in Portugal.</div></li>
 
           <li class="zone">③ Chiado — Largo do Chiado &amp; Rua Garrett</li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/sp-nata.jpg" alt="Pastéis de nata" loading="lazy"><div class="vtext"><div class="name">Manteigaria <span class="pill">Nata</span></div><div class="desc">Rua do Loreto 2. The pastel de nata, warm from the window — the nata stop.</div></div></li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/shop-vistaalegre.jpg" alt="Vista Alegre porcelain plate" loading="lazy"><div class="vtext"><div class="name">Vista Alegre</div><div class="desc">Largo do Chiado 20. Royal-supplier porcelain since 1824 — the classic services plus the Siza Vieira and Christian Lacroix collaborations.</div></div></li>
-          <li class="has-thumb"><img class="thumb" src="static/common/coffee.jpg" alt="A coffee on a café terrace" loading="lazy"><div class="vtext"><div class="name">A Brasileira &amp; the Pessoa statue <span class="pill">Café · photo</span></div><div class="desc">Rua Garrett 120. The 1905 café with Fernando Pessoa cast in bronze on the terrace — a bica at the old counter and the obligatory photo.</div></div></li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/sp-bertrand.jpg" alt="Livraria Bertrand bookshop interior" loading="lazy"><div class="vtext"><div class="name">Livraria Bertrand <span class="pill">Oldest</span></div><div class="desc">Rua Garrett 73. The oldest working bookshop in the world, trading since 1732.</div></div></li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/vidaportuguesa.jpg" alt="Inside A Vida Portuguesa" loading="lazy"><div class="vtext"><div class="name">A Vida Portuguesa <span class="pill alt">Flagship</span></div><div class="desc">Rua Anchieta 11. The grand emporium of Portuguese craft — soap, preserves, stationery, tin toys, kitchenware, beautifully packaged. The big souvenir stop.</div></div></li>
-          <li><div class="name">Loja da Burel</div><div class="desc">Rua Serpa Pinto 15B. Serra da Estrela wool reborn as felted blankets, coats and cushions — the softest souvenir.</div></li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/shop-luvaria.jpg" alt="Luvaria Ulisses glove shop" loading="lazy"><div class="vtext"><div class="name">Luvaria Ulisses <span class="pill">A marvel</span></div><div class="desc">Rua do Carmo 87A. A tiny 1925 glove shop — leather gloves fitted to your hand on a brass cushion. A short detour east; two minutes, and unforgettable.</div></div></li>
-          <li><div class="name">Museum of Illusions <span class="pill clay">Optional · kids</span></div><div class="desc">Rua Ivens 62. Tilt rooms, holograms and brain-tricks — the high-energy break if the kids need one (45–60 min, so only if there's room).</div></li>
+          <li class="has-thumb" data-trail data-lat="38.7110" data-lng="-9.1444" data-label="Manteigaria"><img class="thumb" src="static/lisbon/sp-nata.jpg" alt="Pastéis de nata" loading="lazy"><div class="vtext"><div class="name">Manteigaria <span class="pill">Nata</span></div><div class="desc">Rua do Loreto 2. The pastel de nata, warm from the window — the nata stop.</div></div></li>
+          <li class="has-thumb" data-trail data-lat="38.7106" data-lng="-9.1426" data-label="Vista Alegre"><img class="thumb" src="static/lisbon/shop-vistaalegre.jpg" alt="Vista Alegre porcelain plate" loading="lazy"><div class="vtext"><div class="name">Vista Alegre</div><div class="desc">Largo do Chiado 20. Royal-supplier porcelain since 1824 — the classic services plus the Siza Vieira and Christian Lacroix collaborations.</div></div></li>
+          <li class="has-thumb" data-trail data-lat="38.7106" data-lng="-9.1419" data-label="A Brasileira &amp; the Pessoa statue"><img class="thumb" src="static/common/coffee.jpg" alt="A coffee on a café terrace" loading="lazy"><div class="vtext"><div class="name">A Brasileira &amp; the Pessoa statue <span class="pill">Café · photo</span></div><div class="desc">Rua Garrett 120. The 1905 café with Fernando Pessoa cast in bronze on the terrace — a bica at the old counter and the obligatory photo.</div></div></li>
+          <li class="has-thumb" data-trail data-lat="38.7104" data-lng="-9.1411" data-label="Livraria Bertrand"><img class="thumb" src="static/lisbon/sp-bertrand.jpg" alt="Livraria Bertrand bookshop interior" loading="lazy"><div class="vtext"><div class="name">Livraria Bertrand <span class="pill">Oldest</span></div><div class="desc">Rua Garrett 73. The oldest working bookshop in the world, trading since 1732.</div></div></li>
+          <li class="has-thumb" data-trail data-lat="38.7100" data-lng="-9.1408" data-label="A Vida Portuguesa"><img class="thumb" src="static/lisbon/vidaportuguesa.jpg" alt="Inside A Vida Portuguesa" loading="lazy"><div class="vtext"><div class="name">A Vida Portuguesa <span class="pill alt">Flagship</span></div><div class="desc">Rua Anchieta 11. The grand emporium of Portuguese craft — soap, preserves, stationery, tin toys, kitchenware, beautifully packaged. The big souvenir stop.</div></div></li>
+          <li data-trail data-lat="38.7102" data-lng="-9.1416" data-label="Loja da Burel"><div class="name">Loja da Burel</div><div class="desc">Rua Serpa Pinto 15B. Serra da Estrela wool reborn as felted blankets, coats and cushions — the softest souvenir.</div></li>
+          <li class="has-thumb" data-trail data-lat="38.7108" data-lng="-9.1399" data-label="Luvaria Ulisses"><img class="thumb" src="static/lisbon/shop-luvaria.jpg" alt="Luvaria Ulisses glove shop" loading="lazy"><div class="vtext"><div class="name">Luvaria Ulisses <span class="pill">A marvel</span></div><div class="desc">Rua do Carmo 87A. A tiny 1925 glove shop — leather gloves fitted to your hand on a brass cushion. A short detour east; two minutes, and unforgettable.</div></div></li>
+          <li data-trail data-opt data-lat="38.7096" data-lng="-9.1412" data-label="Museum of Illusions"><div class="name">Museum of Illusions <span class="pill clay">Optional · kids</span></div><div class="desc">Rua Ivens 62. Tilt rooms, holograms and brain-tricks — the high-energy break if the kids need one (45–60 min, so only if there's room).</div></li>
 
           <li class="zone">④ Down to the river — Alecrim &amp; Rua das Flores</li>
-          <li class="has-thumb"><img class="thumb" src="static/lisbon/shop-santanna.jpg" alt="A Fábrica Sant'Anna azulejo" loading="lazy"><div class="vtext"><div class="name">Fábrica Sant'Anna <span class="pill">Tiles</span></div><div class="desc">Rua do Alecrim 95. Hand-painted azulejos since 1741 — the grown-up version of the tiles the kids painted in Azeitão; they ship.</div></div></li>
-          <li><div class="name">By the Wine <span class="pill">A glass</span></div><div class="desc">Rua das Flores 41. José Maria da Fonseca's bar under a ceiling of green bottles — a glass of the Azeitão Moscatel you saw at source.</div></li>
-          <li><div class="name">La Paz</div><div class="desc">Rua das Flores 16. The Porto label's understated menswear and homeware, on the last downhill street to the river.</div></li>
-          <li><div class="name">Ascensor da Bica <span class="pill clay">Optional · photo</span></div><div class="desc">The little funicular climbing its flower-lined street — ride it or just photograph it, a couple of blocks west before the market.</div></li>
-          <li class="has-thumb"><img class="thumb" src="static/common/wine.jpg" alt="A glass of red wine" loading="lazy"><div class="vtext"><div class="name">Time Out Market &amp; the car <span class="pill alt">End</span></div><div class="desc">Back at the parking — a snack in the market hall if anyone's flagging, then the riverside road home. Dinner: Atalho Real (Príncipe Real, steak, family-friendly) or Senhor Uva (Estrela, natural wine, a grown-up night).</div></div></li>
+          <li class="has-thumb" data-trail data-lat="38.7090" data-lng="-9.1432" data-label="Fábrica Sant'Anna"><img class="thumb" src="static/lisbon/shop-santanna.jpg" alt="A Fábrica Sant'Anna azulejo" loading="lazy"><div class="vtext"><div class="name">Fábrica Sant'Anna <span class="pill">Tiles</span></div><div class="desc">Rua do Alecrim 95. Hand-painted azulejos since 1741 — the grown-up version of the tiles the kids painted in Azeitão; they ship.</div></div></li>
+          <li data-trail data-lat="38.7093" data-lng="-9.1433" data-label="By the Wine"><div class="name">By the Wine <span class="pill">A glass</span></div><div class="desc">Rua das Flores 41. José Maria da Fonseca's bar under a ceiling of green bottles — a glass of the Azeitão Moscatel you saw at source.</div></li>
+          <li data-trail data-lat="38.7088" data-lng="-9.1440" data-label="La Paz"><div class="name">La Paz</div><div class="desc">Rua das Flores 16. The Porto label's understated menswear and homeware, on the last downhill street to the river.</div></li>
+          <li data-trail data-opt data-lat="38.7085" data-lng="-9.1457" data-label="Ascensor da Bica"><div class="name">Ascensor da Bica <span class="pill clay">Optional · photo</span></div><div class="desc">The little funicular climbing its flower-lined street — ride it or just photograph it, a couple of blocks west before the market.</div></li>
+          <li class="has-thumb" data-trail data-lat="38.7068" data-lng="-9.1457" data-label="Time Out Market &amp; the car"><img class="thumb" src="static/common/wine.jpg" alt="A glass of red wine" loading="lazy"><div class="vtext"><div class="name">Time Out Market &amp; the car <span class="pill alt">End</span></div><div class="desc">Back at the parking — a snack in the market hall if anyone's flagging, then the riverside road home. Dinner: Atalho Real (Príncipe Real, steak, family-friendly) or Senhor Uva (Estrela, natural wine, a grown-up night).</div></div></li>
         </ul>
         <div class="note"><b>Park once</b>Leave the three cars at Cais do Sodré (Mercado da Ribeira) or SABA Praça do Município and do all of this on foot — don't drive Bairro Alto's tiny streets. The riverside road runs straight onto the bridge home. <button type="button" class="transport-btn" data-open-transport style="margin-top:8px" aria-haspopup="dialog"><span class="ico" aria-hidden="true">⌖</span> Parking &amp; transport options</button></div>
         <div class="note"><b>Timing</b>~2:45 onward · sunset at the miradouro ~6 · dinner after.</div>
@@ -280,7 +280,9 @@
   </div>
 </div>
 
-<div class="trip-map-shell" aria-label="Map of the day's stops">
+<div class="trip-map-shell" aria-label="Map of the day's stops"
+  data-trail-path="38.7166,-9.1493;38.7164,-9.1478;38.7155,-9.1442;38.7137,-9.1432;38.7122,-9.1428;38.7106,-9.1426;38.7102,-9.1410;38.7096,-9.1412;38.7093,-9.1432;38.7088,-9.1440;38.7085,-9.1457;38.7068,-9.1457"
+  data-tram-path="38.7026,-9.1790;38.7050,-9.1640;38.7068,-9.1457">
   <button class="map-toggle" id="mapToggle" aria-expanded="true">Hide map</button>
   <div class="map-now"><span class="i">Now</span><span id="mapNowLabel">—</span></div>
   <div id="trip-map"></div>
@@ -347,44 +349,5 @@
 </script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="static/itinerary-map.js"></script>
-<script>
-/* The Day-2 walking line: numbered pins + a downhill route polyline */
-(function(){
-  var el=document.getElementById('routeMap');
-  if(!el||typeof L==='undefined')return;
-  // numbered waypoint pins (a subset that keeps the small map legible)
-  var stops=[
-    {ll:[38.7166,-9.1493],lb:'1',c:'#1E3D7B',t:'① Livraria da Travessa — start'},
-    {ll:[38.7164,-9.1478],lb:'2',c:'#1E3D7B',t:'EmbaiXada · Príncipe Real'},
-    {ll:[38.7155,-9.1442],lb:'+',c:'#A8703C',t:'Miradouro de São Pedro de Alcântara (optional)'},
-    {ll:[38.7137,-9.1432],lb:'3',c:'#1E3D7B',t:'② Igreja de São Roque · Claus Porto'},
-    {ll:[38.7102,-9.1414],lb:'4',c:'#1E3D7B',t:'③ Chiado — Rua Garrett (A Vida Portuguesa, Bertrand, A Brasileira)'},
-    {ll:[38.7089,-9.1438],lb:'5',c:'#1E3D7B',t:'④ Rua das Flores — La Paz, By the Wine'},
-    {ll:[38.7085,-9.1457],lb:'+',c:'#A8703C',t:'Ascensor da Bica (optional)'},
-    {ll:[38.7068,-9.1457],lb:'6',c:'#2C6E60',t:'Time Out Market · the car'}
-  ];
-  var map=L.map(el,{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-  }).addTo(map);
-  // the full downhill line, with shaping vertices through the Chiado streets
-  var line=[
-    [38.7166,-9.1493],[38.7164,-9.1478],[38.7155,-9.1442],[38.7137,-9.1432],
-    [38.7122,-9.1428],[38.7106,-9.1426],[38.7100,-9.1408],[38.7096,-9.1412],
-    [38.7093,-9.1430],[38.7089,-9.1438],[38.7085,-9.1457],[38.7068,-9.1457]
-  ];
-  L.polyline(line,{color:'#2E5BA8',weight:4,opacity:.7}).addTo(map);
-  function icon(lb,c){
-    return L.divIcon({className:'mm-pin-wrap',
-      html:'<div class="mm-pin" style="background:'+c+'">'+lb+'</div>',
-      iconSize:[28,28],iconAnchor:[14,14]});
-  }
-  stops.forEach(function(s){
-    L.marker(s.ll,{icon:icon(s.lb,s.c)}).addTo(map).bindTooltip(s.t);
-  });
-  map.fitBounds(line,{padding:[30,30]});
-  setTimeout(function(){map.invalidateSize();map.fitBounds(line,{padding:[30,30]});},300);
-})();
-</script>
 </body>
 </html>
