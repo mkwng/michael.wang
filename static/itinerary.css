@@ -347,6 +347,7 @@ figure{margin:2px 0 6px;}
 }
 .route-head .rmeta b{color:var(--ink);font-weight:500;}
 .route-head .rmeta .dot{color:var(--az);}
+.route-head .rnote{font-size:13px;line-height:1.45;color:var(--muted);margin:10px 0 0;}
 .route-map{
   height:280px;width:100%;background:#dfe5ec;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -354,7 +355,8 @@ figure{margin:2px 0 6px;}
 .route-map .leaflet-container{font-family:'IBM Plex Sans',sans-serif;}
 .route-map .leaflet-control-zoom a{color:var(--az)!important;}
 .route-legend{
-  display:flex;flex-wrap:wrap;gap:7px 14px;padding:10px 18px 0;
+  display:flex;flex-wrap:wrap;gap:7px 14px;padding:12px 18px 16px;
+  border-top:1px solid var(--line);
   font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.02em;color:var(--muted);
 }
 .route-legend .lg{display:flex;align-items:center;gap:6px;}
