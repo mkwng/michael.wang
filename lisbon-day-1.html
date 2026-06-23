@@ -192,6 +192,16 @@
     </div>
     <div class="modal-body">
 
+      <figure class="modal-map-wrap">
+        <div class="modal-map" id="transportMap"></div>
+        <figcaption class="modal-legend">
+          <span class="lg"><span class="dotpin" style="background:#1E3D7B"></span> 1 · Campo das Cebolas (pick)</span>
+          <span class="lg"><span class="dotpin" style="background:#6E6857"></span> 2 · Martim Moniz</span>
+          <span class="lg"><span class="dotpin" style="background:#A8703C"></span> 3 · Chão do Loureiro</span>
+          <span class="lg"><span class="dotpin" style="background:#2C6E60"></span> ★ Castle gate</span>
+        </figcaption>
+      </figure>
+
       <div class="tsec">
         <p class="tlabel">Driving in &amp; out</p>
         <h3>Two bridges, two jobs</h3>
@@ -262,7 +272,33 @@
   if(!backdrop)return;
   var openers=document.querySelectorAll('[data-open-transport]');
   var closers=backdrop.querySelectorAll('[data-close-transport]');
-  var lastFocus=null;
+  var lastFocus=null,map=null;
+  function mmIcon(label,color){
+    return L.divIcon({className:'mm-pin-wrap',
+      html:'<div class="mm-pin" style="background:'+color+'">'+label+'</div>',
+      iconSize:[28,28],iconAnchor:[14,14]});
+  }
+  function initMap(){
+    if(map||typeof L==='undefined')return;
+    var el=document.getElementById('transportMap');
+    if(!el)return;
+    map=L.map(el,{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var pts=[
+      {ll:[38.7095,-9.1318],lb:'1',c:'#1E3D7B',t:'Campo das Cebolas — our pick'},
+      {ll:[38.7166,-9.1359],lb:'2',c:'#6E6857',t:'Martim Moniz underground'},
+      {ll:[38.7135,-9.1330],lb:'3',c:'#A8703C',t:'Chão do Loureiro'},
+      {ll:[38.7139,-9.1334],lb:'★',c:'#2C6E60',t:'Castelo de São Jorge — gate'}
+    ];
+    var b=[];
+    pts.forEach(function(p){
+      L.marker(p.ll,{icon:mmIcon(p.lb,p.c)}).addTo(map).bindTooltip(p.t);
+      b.push(p.ll);
+    });
+    map.fitBounds(b,{padding:[34,34]});
+  }
   function open(e){
     if(e)e.preventDefault();
     lastFocus=document.activeElement;
@@ -271,6 +307,8 @@
     document.body.style.overflow='hidden';
     var c=backdrop.querySelector('.modal-close');
     if(c)c.focus();
+    initMap();
+    if(map)setTimeout(function(){map.invalidateSize();map.fitBounds([[38.7095,-9.1318],[38.7166,-9.1359],[38.7135,-9.1330],[38.7139,-9.1334]],{padding:[34,34]});},360);
   }
   function close(){
     backdrop.classList.remove('open');
