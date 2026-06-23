@@ -47,6 +47,11 @@
         <span>2 stops + lunch</span><span class="dot">·</span>
         <span><b>out by 4pm</b></span>
       </div>
+      <div class="meta-tools">
+        <button type="button" class="transport-btn" data-open-transport aria-haspopup="dialog">
+          <span class="ico" aria-hidden="true">⌖</span> Getting around — all transport options
+        </button>
+      </div>
     </div>
   </header>
 
@@ -95,7 +100,7 @@
           <li><div class="name">The ramparts &amp; camera obscura</div><div class="desc">Walls and towers to climb, cannon to clamber on, and a periscope that pans live over the city.</div></li>
           <li><div class="name">Peacocks &amp; the gardens <span class="pill">Kids</span></div><div class="desc">Shaded paths and lawns where the 1, 3 and 4-year-olds can just be let loose.</div></li>
         </ul>
-        <div class="note"><b>Park</b>The Chão do Loureiro car park sits up on the hill at Costa do Castelo (above the Sé), so you skip driving the scooter-width lanes — and the building has free public lifts up from the Baixa plus a rooftop viewpoint and café. From the top it's still about a 10-minute walk, a little uphill, to the gate.</div>
+        <div class="note"><b>Getting up</b>There's no parking at the gate, and the lanes are scooter-width. The easy version: leave the three cars flat at the riverside Campo das Cebolas garage and take tuk-tuks or an Uber the rest of the way up. <button type="button" class="transport-btn" data-open-transport style="margin-top:8px" aria-haspopup="dialog"><span class="ico" aria-hidden="true">⌖</span> All transport options</button></div>
         <div class="note"><b>Tickets</b>Book castle entry online to walk past the queue. ~1.5 hrs is plenty before lunch.</div>
       </div>
     </section>
@@ -163,7 +168,7 @@
     <p class="sub">A tight day, well run</p>
     <ul class="checklist">
       <li><span><b>The aquarium is the squeeze.</b> Pre-book a ~2:30 slot — it's the one timed thing, and the 4pm exit is tight; reckon on about an hour and a quarter inside.</span></li>
-      <li><span><b>Just the castle.</b> Alfama is kept to the Castelo de São Jorge alone — a contained romp for the kids rather than the steep, touristy maze — and parking up at Chão do Loureiro spares you the lanes and the worst of the climb (about a 10-minute walk from there).</span></li>
+      <li><span><b>Just the castle.</b> Alfama is kept to the Castelo de São Jorge alone — a contained romp for the kids rather than the steep, touristy maze. Park flat at riverside Campo das Cebolas and ride a tuk-tuk or Uber up; there's no parking at the gate. (Tap <b>Getting around</b> up top for every option.)</span></li>
       <li><span><b>Reserve lunch.</b> Book Cantinho do Aziz (or Chapitô, for the view) ahead for the group; Pois Café is walk-in. Keep it to an hour.</span></li>
       <li><span><b>The clean exit.</b> Parque das Nações is at the foot of the Vasco da Gama bridge, so you're out of the city within minutes of leaving the aquarium.</span></li>
     </ul>
@@ -174,12 +179,113 @@
 
 </div>
 
+<!-- Transport options modal -->
+<div class="modal-backdrop" id="transportModal" role="dialog" aria-modal="true" aria-labelledby="transportTitle" aria-hidden="true">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">Getting around · Lisbon Day 1</p>
+        <h2 id="transportTitle">All our transport options</h2>
+        <p class="sub">Three cars, six adults, five kids. In over one bridge, out over the other — and a flat-parking-plus-tuk-tuk plan for the castle hill.</p>
+      </div>
+      <button type="button" class="modal-close" data-close-transport aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+
+      <div class="tsec">
+        <p class="tlabel">Driving in &amp; out</p>
+        <h3>Two bridges, two jobs</h3>
+        <p class="lede">Come in on one, leave on the other — it lines up neatly with the day.</p>
+        <ul class="topts">
+          <li><div class="on">Ponte 25 de Abril <span class="badge pick">Going in</span></div><div class="od">The western suspension bridge drops you straight toward the old town and the castle. ~40 min from the house. Tolled northbound only — the rental's Via Verde tag handles it automatically.</div></li>
+          <li><div class="on">Ponte Vasco da Gama <span class="badge">Coming home</span></div><div class="od">The long northern bridge lands right at Parque das Nações — i.e. at the aquarium's doorstep. So you finish the day already pointed at it, cross, and you're ~40 min from home with no backtracking.</div></li>
+        </ul>
+      </div>
+
+      <div class="tsec">
+        <p class="tlabel">Parking by the castle</p>
+        <h3>Park flat, don't fight the hill</h3>
+        <p class="lede">There's no parking at the gate — Rua de Santa Cruz do Castelo is access-controlled — and the lanes up are scooter-width. Leave the cars somewhere flat and reliable.</p>
+        <ul class="topts">
+          <li><div class="on">Campo das Cebolas <span class="badge pick">Our pick</span></div><div class="od">Modern riverside EMEL garage by the Sé and Praça do Comércio — clean, well-run, ~230 big spaces, takes cards. Tuk-tuks and Tram 28 wait right outside to ride up. The nicest place to start the morning with the kids.</div></li>
+          <li><div class="on">Martim Moniz underground <span class="badge warn">Flat, but gritty</span></div><div class="od">Closest flat garage to the gate and it swallows three cars, but go in clear-eyed: the garage is dated (old cash machines, tight ramps, ~2.3 m height limit) and the square reads rough — multicultural and lively by day, but with drug-dealer touts and best avoided after dark. Fine as a daytime backup if Campo das Cebolas is full.</div></li>
+          <li><div class="on">Chão do Loureiro <span class="badge warn">Not as close as it looks</span></div><div class="od">The hillside garage at Costa do Castelo with the free Baixa lift and a rooftop café. Handy, but the lift just lands you at its own viewpoint — still a ~10-minute uphill walk with steps to the castle gate. Fine for the view, not a shortcut.</div></li>
+        </ul>
+      </div>
+
+      <div class="tsec">
+        <p class="tlabel">The last stretch up to the gate</p>
+        <h3>Riding up the hill</h3>
+        <p class="lede">From flat parking, skip the climb with five littles — let something else do the steep bit.</p>
+        <ul class="topts">
+          <li><div class="on">Tuk-tuk <span class="badge pick">Best with kids</span></div><div class="od">They wait all along the Baixa and the riverside and drop you right at the castle entrance. A hit with the little ones, and they take the gradient and the cobbles for you. Agree the price first.</div></li>
+          <li><div class="on">Uber / Bolt</div><div class="od">Both run all over Lisbon and can drop at the gate. Two cars for the group of eleven. Often cheaper than a tuk-tuk and just as quick.</div></li>
+          <li><div class="on">Bus 737</div><div class="od">The one public bus that climbs to the castle gate — from Praça da Figueira / Martim Moniz. Cheap and direct, but small and it fills up; tricky to keep the whole party together.</div></li>
+          <li><div class="on">Tram 28 <span class="badge warn">Iconic, but</span></div><div class="od">The famous yellow tram passes below the castle, but it only gets you to the base of the hill — still a climb — and the queues and pickpockets are real. More sightseeing than transport.</div></li>
+          <li><div class="on">Elevador do Castelo <span class="badge">Free</span></div><div class="od">A free public lift from Rua dos Fanqueiros in the Baixa up through Chão do Loureiro to Costa do Castelo (7am–9pm). Still leaves the same ~10-minute uphill walk to the gate — worth knowing, not the fast way.</div></li>
+        </ul>
+      </div>
+
+      <div class="tsec">
+        <p class="tlabel">At the aquarium</p>
+        <h3>Parque das Nações</h3>
+        <ul class="topts">
+          <li><div class="on">Centro Vasco da Gama garage <span class="badge pick">Our pick</span></div><div class="od">The mall's underground garage is huge, easy with three cars, and a 5-minute flat walk to the Oceanário. Best of all it sits at the foot of the Vasco da Gama bridge — so leaving the garage and leaving the city are the same move.</div></li>
+        </ul>
+      </div>
+
+      <div class="tsec">
+        <p class="tlabel">Apps &amp; payments</p>
+        <h3>Worth having on a phone</h3>
+        <ul class="topts">
+          <li><div class="on">Uber &amp; Bolt</div><div class="od">Both work well across Lisbon — Bolt is usually a little cheaper. Handy for the castle hill and any "we're done walking" moment.</div></li>
+          <li><div class="on">EMEL ePark / Telpark</div><div class="od">For paid on-street parking if a garage is full — pay by app rather than feeding a meter. Garages above take card at the barrier.</div></li>
+          <li><div class="on">Tolls (Via Verde)</div><div class="od">Both bridges and the motorways are tolled. Rental cars almost always carry a Via Verde transponder — charges land on the rental — so you just drive through the green lanes.</div></li>
+        </ul>
+      </div>
+
+      <p class="modal-foot">The short version: 25 de Abril in, park flat at Campo das Cebolas, tuk-tuk up to the gate. Aquarium in the afternoon, park under the mall, and roll straight onto the Vasco da Gama bridge home.</p>
+
+    </div>
+  </div>
+</div>
+
 <div class="trip-map-shell" aria-label="Map of the day's stops">
   <button class="map-toggle" id="mapToggle" aria-expanded="true">Hide map</button>
   <div class="map-now"><span class="i">Now</span><span id="mapNowLabel">—</span></div>
   <div id="trip-map"></div>
 </div>
 
+<script>
+(function(){
+  var backdrop=document.getElementById('transportModal');
+  if(!backdrop)return;
+  var openers=document.querySelectorAll('[data-open-transport]');
+  var closers=backdrop.querySelectorAll('[data-close-transport]');
+  var lastFocus=null;
+  function open(e){
+    if(e)e.preventDefault();
+    lastFocus=document.activeElement;
+    backdrop.classList.add('open');
+    backdrop.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    var c=backdrop.querySelector('.modal-close');
+    if(c)c.focus();
+  }
+  function close(){
+    backdrop.classList.remove('open');
+    backdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+  openers.forEach(function(b){b.addEventListener('click',open);});
+  closers.forEach(function(b){b.addEventListener('click',close);});
+  backdrop.addEventListener('click',function(e){if(e.target===backdrop)close();});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&backdrop.classList.contains('open'))close();
+  });
+})();
+</script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="static/itinerary-map.js"></script>
 </body>
